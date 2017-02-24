@@ -8,12 +8,11 @@ ZE3kr.com
 
 ## 自定义 Shortcode
 
-本网站使用了自定义的 Shortcode，以插件形式实现，转载时请注意要替换这些 Shortcode，[具体代码见此处](https://git.tlo.xyz/ZE3kr/ZE3kr.com/snippets/8)，使用方法如下：
+本网站使用了自定义的 Shortcode，以插件形式实现，转载时请注意要替换这些 Shortcode，使用方法如下：
 
 ### 图片
 
-优雅的插入图片
-
+优雅的插入图片，主要是用来插入带 Exif 的图片。
 用法：`[img id="media id (int)" size="thumbnail/medium/large/full" exif="on/only"]Caption[/img]`
 
 ### 链接
