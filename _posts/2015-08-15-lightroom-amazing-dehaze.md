@@ -6,15 +6,15 @@ title: Lightroom 强大的去朦胧/雾霾功能
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 168
 wordpress_url: http://ze3kr.tlo.xyz/?p=168
-date: '2015-08-15 21:15:21 -0400'
-date_gmt: '2015-08-15 13:15:21 -0400'
+date: '2015-08-15 21:15:21 +0000'
+date_gmt: '2015-08-15 13:15:21 +0000'
 categories:
 - 科技
 tags:

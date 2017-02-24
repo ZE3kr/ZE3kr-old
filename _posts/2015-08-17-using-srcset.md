@@ -6,15 +6,15 @@ title: 使用 srcset + sizes 属性与 w 标识符解决一切响应式图片问
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 7
 wordpress_url: http://webdev.tlo.xyz/?p=7
-date: '2015-08-17 09:07:34 -0400'
-date_gmt: '2015-08-17 01:07:34 -0400'
+date: '2015-08-17 09:07:34 +0000'
+date_gmt: '2015-08-17 01:07:34 +0000'
 categories:
 - 开发
 tags:

@@ -6,15 +6,15 @@ title: 建立自动负载均衡与服务器集群并存的博客系统
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 989
 wordpress_url: https://ze3kr.com/?p=989
-date: '2016-02-01 10:40:00 -0500'
-date_gmt: '2016-02-01 02:40:00 -0500'
+date: '2016-02-01 10:40:00 +0000'
+date_gmt: '2016-02-01 02:40:00 +0000'
 categories:
 - 开发
 tags:

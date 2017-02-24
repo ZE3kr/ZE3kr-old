@@ -6,15 +6,15 @@ title: Rage4、CloudXNS、Route53 和 CloudFlare — 国内外 DNS 解析对比
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1668
 wordpress_url: https://ze3kr.com/?p=1668
-date: '2016-05-29 14:43:00 -0400'
-date_gmt: '2016-05-29 06:43:00 -0400'
+date: '2016-05-29 14:43:00 +0000'
+date_gmt: '2016-05-29 06:43:00 +0000'
 categories:
 - 科技
 tags:
@@ -29,7 +29,7 @@ tags:
 <p><strong>分区解析</strong>（Geo Routing/Latency Based Routing）：CloudFlare 完全不支持这个功能，但其本身提供 CDN 服务，也就是说，如果你只有一个服务器，那用 CloudFlare 是最合适的。剩下的三者都对其有所支持，都能精确到国家，其中只有 CloudXNS 能够精确到中国各省份的各运营商，但是 Rage4 支持到了一些国家的不同区域（但是对于一些大洲还没有支持到国家），Route53 支持一些国家的不同城市。Rage4 和 CloudXNS 支持智能解析，CloudXNS 会自动识别你的多个服务器，实现真对不同的运营商、不同的区域有不同的解析，但是只对国内的服务器有效；Rage4 的智能解析不是自动的，但却更强大：你可以输入你的服务器的经纬度，然后它会根据访客 IP 的地理位置，返回最近的IP。注意，目前</p>
 <p><strong>服务器位置</strong>：Rage4、Route53 和 CloudFlare 的服务器都遍布全球，每个 DNS 域名都只对应一个 IP 地址，因为它们都使用了 Anycast 技术，能保证最低的延迟，但它们在国内有没有服务器。CloudXNS 的服务器在国外几乎没有，国内有不少，但没有使用 Anycast 技术，所以到最后，解析的时候只是随机连一个国内的服务器，无法做到最低延迟，但对于国内来说，至少不会很慢。目前 Rage4 似乎不支持 EDNS client subnet，其他两个似乎支持。</p>
 <p><strong>DNSSEC</strong>：目前只有 Rage4 和 CloudFlare 支持，能够防止 DNS 污染，但很大程度上还是取决于运营商的配置。Rage4 几乎支持所有的 DNSSEC 加密技术，通用型更强，而 CloudFlare 则是给你选一种。</p>
-<p><strong>IPv6</strong>：目前只有 Rage4 和 CloudFlare 的 DNS 服务器正确配置了 IPv6，但它们四者都能解析 AAAA 记录。</p>
+<p><strong>IPv6</strong>：目前只剩 CloudXNS 不支持 IPv6，但它们四者都能解析 AAAA 记录。</p>
 <p><strong>DANE</strong>（TLSA 记录）：目前只有 Rage4 支持，安全性方面的，本文暂不做过多介绍。</p>
 <p><strong>自定义 NS</strong>（Vanity NS/Traffic Flow/Custom Nameservers）：就是配置的 DNS 服务器为自己的域名，目前只有 CloudXNS 不支持，其他三个都支持。但是只有 Rage4 和 Route53 的这项服务是免费的。</p>
 <p>举个例子，就是这个效果：</p>
@@ -83,3 +83,4 @@ tags:
 <h2>价格</h2>
 <p>Rage4、CloudXNS 和 CloudFlare 都有永久免费的服务，也都可以按需升级。Route53 是按需付费的，每个域名每月 0.5 美元，请求单独按需计费。</p>
 <p><strong>免费额度</strong>：Rage4 每月每域名 50 万次，在此之后每 100 万次 2 欧元；CloudXNS 每月每域名 1 亿次，基本上就是无限的了；CloudFlare 没有写额度，有可能是不限的。</p>
+<p>[modified github="ZE3kr/ZE3kr"]更新：Route 53 现在已经支持 IPv6[/modified]</p>

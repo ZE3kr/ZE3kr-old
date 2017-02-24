@@ -6,15 +6,15 @@ title: 新间隔拍摄
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1442
 wordpress_url: https://www.ze3kr.com/?p=1442
-date: '2015-07-02 08:38:13 -0400'
-date_gmt: '2015-07-02 00:38:13 -0400'
+date: '2015-07-02 08:38:13 +0000'
+date_gmt: '2015-07-02 00:38:13 +0000'
 categories:
 - 间隔拍摄
 tags: []

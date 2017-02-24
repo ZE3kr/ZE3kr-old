@@ -6,15 +6,15 @@ title: 全面 HTTPS 时代即将到来
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 13
 wordpress_url: http://webdev.tlo.xyz/?p=13
-date: '2015-12-13 09:19:00 -0500'
-date_gmt: '2015-12-13 01:19:00 -0500'
+date: '2015-12-13 09:19:00 +0000'
+date_gmt: '2015-12-13 01:19:00 +0000'
 categories:
 - 开发
 tags:
@@ -66,7 +66,7 @@ tags:
 <h3>更慢的加载速度</h3>
 <p>不得不说使用 HTTPS 的确会增大延迟，这种延迟主要体现在加载首个页面，进入下一个页面就会快很多了。在我这里测试启用 HTTPS 后会多出 2~5 倍的延迟。如果还有资源在别的域，那么这些资源也会多出这么多的延迟。</p>
 <h3>兼容性问题</h3>
-<p>SNI 协议已经被大量的使用，但是仍然有一些设备是不兼容的，比如 Windows XP 的 IE8 及以前的浏览器都不兼容。截止到目前，[a href="http://caniuse.com/#feat=sni"]中国支持 SNI 的浏览器使用率已经达到了 90%[/a]。</p>
+<p>SNI 协议已经被大量的使用，但是仍然有一些设备是不兼容的，比如 Windows XP 的 IE8 及以前的浏览器都不兼容。截止到目前，[a href="http://caniuse.com/#feat=sni"]中国支持 SNI 的浏览器使用率已经达到了 95%[/a]。</p>
 <h3>搜索引擎</h3>
 <p>有些搜索引擎对 HTTPS 很好，但是也有一些搜索引擎不支持它。不过目前越来越多的搜索引擎都在逐步支持 HTTPS，我觉得不必担心。</p>
 <h3>成本</h3>

@@ -6,15 +6,15 @@ title: Workflow – 在 iOS 设备上大大提高使用效率
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 207
 wordpress_url: http://ze3kr.tlo.xyz/?p=207
-date: '2015-10-24 17:00:37 -0400'
-date_gmt: '2015-10-24 09:00:37 -0400'
+date: '2015-10-24 17:00:37 +0000'
+date_gmt: '2015-10-24 09:00:37 +0000'
 categories:
 - App 推荐
 tags:
@@ -26,7 +26,7 @@ tags:
 <p><!--more--></p>
 <h2>演示视频</h2>
 <p>使用 Workflow 实现内部创建短链接（分别利用 Extensions 和 Today Widget）。</p>
-<p>[video width="720" height="1280" mp4="https://s3.tlo.link/sites/2/20160131134229/Workflow-%E5%88%9B%E5%BB%BA%E7%9F%AD%E9%93%BE%E6%8E%A5%E6%BC%94%E7%A4%BA-HD.mp4"][/video]</p>
+<p>[video width="720" height="1280" mp4="https://cdn.tloxygen.com/sites/2/20160131134229/Workflow-%E5%88%9B%E5%BB%BA%E7%9F%AD%E9%93%BE%E6%8E%A5%E6%BC%94%E7%A4%BA-HD.mp4"][/video]</p>
 <h2>功能</h2>
 <p>它可以实现一系列接二连三的操作。比如：</p>
 <ul>

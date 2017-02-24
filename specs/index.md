@@ -6,31 +6,40 @@ title: 技术参数
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 578
 wordpress_url: https://ze3kr.com/?page_id=578
-date: '2016-01-03 13:33:56 -0500'
-date_gmt: '2016-01-03 05:33:56 -0500'
+date: '2016-01-03 13:33:56 +0000'
+date_gmt: '2016-01-03 05:33:56 +0000'
 categories: []
 tags: []
 ---
-<h2>网站</h2>
-<p>使用 WordPress 搭建，使用两个服务器，几乎完全静态化。主机使用 LNMP 配置，使用 OVH 的 8GB 内存版本，在亚洲东部和北美东部都有服务器，<a href="https://github.com/ZE3kr/ZE3kr" target="_blank">GitHub 上</a>有所有文章的源代码，你可以按照协议自由使用。</p>
-<h3>兼容性与先进技术</h3>
+<p>使用 Google Cloud Platform（简称 GCP，下同）搭建，在云端，几乎完全静态化，主机位于台湾。主机使用 LNMP 配置，详情：<a href="https://ze3kr.com/2016/12/go-on-google-cloud/">全面迁移到 Google Cloud Platform</a>。</p>
+<p><img class="aligncenter size-large wp-image-2701" src="https://cdn.tloxygen.com/sites/2/2017/02/gcp4-1600x800.png" alt="" width="525" height="263" /></p>
+<p>&nbsp;</p>
+<h2>兼容性与先进技术</h2>
 <ul>
-<li>网站（包括其所有的资源，下同） HTTPS 几乎支持所有的浏览器（如果是来自中国大陆的访问可完全不需要 SNI 支持，否则 CDN 资源需要 SNI 支持）</li>
+<li>网站本身的 HTTPS 几乎支持所有的浏览器，CDN 资源需要 SNI 支持</li>
 <li>网站开启了 HSTS，并已进入各大浏览器的 Preload List，包括子域名</li>
 <li>网站域名可以在纯 IPv6 的递归解析服务器上解析到 IP 地址</li>
-<li>网站能够在纯 IPv6 情况下正常加载所有基本内容（Gravatar 除外，下同）</li>
-<li>网站自身的域名使用了 DNSSEC 技术，在 IPv6 情况下所有基本内容所在域名都使用了 DNSSEC 技术</li>
-<li>网站自身的域名使用了 DANE 确保证书由指定签发商签发</li>
+<li>网站能够在纯 IPv6 情况下正常加载所有基本内容（Gravatar 除外）</li>
 <li>前端使用 WordPress 自带主题，最低能兼容到 Windows XP 的 IE6。</li>
 </ul>
-<h2>视频</h2>
+<h2>网络</h2>
+<h3>台湾源站服务器</h3>
+<h4>国内的网络接入</h4>
+<p>由于不是国内服务器，所以在中国大陆没有接入点。接入点为香港的运营商有中国电信、中国联通、中国移动、中国铁通；接入点为日本的有中国移动。</p>
+<h4>国外的网络接入</h4>
+<p>全球接入极好，此外，每一个接入点都有 DDOS 清洗功能。</p>
+<p><img class="aligncenter size-large wp-image-2544" src="https://cdn.tloxygen.com/sites/2/2016/01/map-1600x788.jpg" alt="" width="525" height="259" /></p>
+<h3>内容分发——CDN</h3>
+<p>详情：<a href="https://ze3kr.com/2017/01/wordpress-full-site-cdn/">WordPress 全站加速及国内外几家 CDN 测评</a></p>
+<p><img class="aligncenter size-large wp-image-2681" src="https://cdn.tloxygen.com/sites/2/2017/02/map2-1600x894.png" alt="" width="525" height="293" /></p>
+<h2>视频参数</h2>
 <h3>视频格式</h3>
 <p>此网站使用自己的 CDN 加速视频，使用 MP4 格式，从 2016 年开始，所有的视频还将有 WEBM 格式，并且我还会逐渐的让以前的视频也支持 WEBM。</p>
 <h3>视频质量</h3>
@@ -55,11 +64,11 @@ ffmpeg -y -i input -c:v libx264 -r 30000/1001 -c:a aac -preset veryslow -s 960x5
 
 ffmpeg -y -i input -c:v libx264 -r 60000/1001 -c:a aac -preset veryslow -s 960x540 -b:v 1500k -pass 2 -b:a 64k -ac 1 output.mp4</pre>
 <h4>30帧 WEBM</h4>
-<pre class="lang:sh decode:true">ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 1 -b:v 1000K -threads 8 -speed 4 -tile-columns 6 -frame-parallel 1 -b:a 64k -ac 1 -s 960x540 -g 150 -r 30000/1001 -an -f webm /dev/null
+<pre class="lang:sh decode:true ">ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 1 -b:v 1000K -threads 8 -speed 4 -tile-columns 6 -frame-parallel 1 -b:a 64k -ac 1 -s 960x540 -g 150 -r 30000/1001 -an -f webm /dev/null
 
-ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 2 -b:v 1000K -threads 8 -speed 1 -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 -lag-in-frames 25 -ac 1 -s 960x540 -g 150 -r 30000/1001 -c:a libopus -b:a 64k -f webm out.webm</pre>
+ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 2 -b:v 1000K -threads 8 -speed 1 -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 -lag-in-frames 25 -ac 1 -s 960x540 -r 30000/1001 -c:a libopus -b:a 64k -f webm out.webm</pre>
 <h4>60帧 WEBM</h4>
 <pre class="lang:sh decode:true">ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 1 -b:v 1500K -threads 8 -speed 4 -tile-columns 6 -frame-parallel 1 -b:a 64k -ac 1 -s 960x540 -g 250 -r 60000/1001 -an -f webm /dev/null
 
-ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 2 -b:v 1500K -threads 8 -speed 1 -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 -lag-in-frames 25 -ac 1 -s 960x540 -g 250 -r 60000/1001 -c:a libopus -b:a 64k -f webm out.webm
+ffmpeg -y -i &lt;source&gt; -c:v libvpx-vp9 -pass 2 -b:v 1500K -threads 8 -speed 1 -tile-columns 6 -frame-parallel 1 -auto-alt-ref 1 -lag-in-frames 25 -ac 1 -s 960x540 -r 60000/1001 -c:a libopus -b:a 64k -f webm out.webm
 </pre>

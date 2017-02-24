@@ -6,27 +6,26 @@ title: 媒体资讯
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1539
 wordpress_url: https://www.ze3kr.com/?page_id=1539
-date: '2016-05-07 20:54:00 -0400'
-date_gmt: '2016-05-07 12:54:00 -0400'
+date: '2016-05-07 20:54:00 +0000'
+date_gmt: '2016-05-07 12:54:00 +0000'
 categories: []
 tags: []
 ---
 <h2>基本信息</h2>
 <ul>
 <li>建站于：2013 年</li>
-<li><a href="http://www.alexa.com/siteinfo/ze3kr.com" target="_blank">网站排名</a></li>
 </ul>
 <h2>Logo 说明</h2>
 <p>Logo 的灵感源自 Mac OS X 系统壁纸，在原先壁纸上重新建模而成，这里提供下载：</p>
-<p><img class="aligncenter size-thumbnail wp-image-1432" src="https://s3.tlo.link/sites/2/20160325182529/ZE3kr_3000-200x200.png" alt="ZE3kr_3000" width="200" height="200" /></p>
-<p style="text-align: center;"><a href="https://s3.tlo.link/sites/2/20160325182529/ZE3kr_3000.png" target="_blank">PNG 格式下载</a> | <a href="https://s3.tlo.link/my-uploads/ZE3kr.svg" target="_blank">SVG 格式下载</a></p>
+<p><img class="aligncenter size-thumbnail wp-image-1432" src="https://cdn.tloxygen.com/sites/2/20160325182529/ZE3kr_3000-200x200.png" alt="ZE3kr_3000" width="200" height="200" /></p>
+<p style="text-align: center;"><a href="https://cdn.tloxygen.com/sites/2/20160325182529/ZE3kr_3000.png" target="_blank">PNG 格式下载</a> | <a href="https://cdn.tloxygen.com/my-uploads/ZE3kr.svg" target="_blank">SVG 格式下载</a></p>
 <h2>网站历史</h2>
 <p>比较无聊，当作日志吧～</p>
 <ul>
@@ -42,5 +41,6 @@ tags: []
 <li>2016 年 2 月 11 日，<a href="https://ze3kr.com/2016/02/this-site-uses-keycdn-as-a-front-end-to-speed-up-instead-of-cloudflare/">使用 KeyCDN 作为前端加速，代替 CloudFlare</a></li>
 <li>2016 年 4 月 2 日，网站迁移到了 Vultr 的 VPS 上，速度再一次加快：<a href="https://ze3kr.com/2016/04/%e6%9c%ac%e7%ab%99%e4%bd%bf%e7%94%a8php7-0/">使用 PHP 7</a> 和 MySQL 5.7。</li>
 <li>2016 年 5 月 8 日：不再使用 CloudFlare 或 KeyCDN 作为全站加速</li>
-<li>2016 年 7 月 2 日：网站重新开源，在 <a href="https://git.tlo.xyz/ZE3kr/ZE3kr.com" target="_blank">gitTLO</a> 和 <a href="https://github.com/ZE3kr/ZE3kr.com" target="_blank">GitHub</a> 上能够找到源代码</li>
+<li>2016 年 7 月 2 日：网站重新开源，在 <a href="https://git.tlo.xyz/ZE3kr/ZE3kr" target="_blank">gitTLO</a> 和 <a href="https://github.com/ZE3kr/ZE3kr" target="_blank">GitHub</a> 上能够找到源代码</li>
+<li>2016 年 7 月 9 日：主服务器<a href="https://ze3kr.com/2016/07/move-to-ovh-and-sunnyvision/">换到 8GB 的 OVH</a>，内存终于够用。</li>
 </ul>

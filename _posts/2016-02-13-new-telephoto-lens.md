@@ -6,15 +6,15 @@ title: 新买的长焦镜头
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1194
 wordpress_url: https://www.ze3kr.com/?p=1194
-date: '2016-02-13 12:47:47 -0500'
-date_gmt: '2016-02-13 04:47:47 -0500'
+date: '2016-02-13 12:47:47 +0000'
+date_gmt: '2016-02-13 04:47:47 +0000'
 categories:
 - 短文
 tags: []

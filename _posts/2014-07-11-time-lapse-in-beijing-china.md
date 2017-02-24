@@ -6,15 +6,15 @@ title: 北京 间隔拍摄
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 10
 wordpress_url: http://ze3kr.tlo.xyz/?p=10
-date: '2014-07-11 15:45:16 -0400'
-date_gmt: '2014-07-11 07:45:16 -0400'
+date: '2014-07-11 15:45:16 +0000'
+date_gmt: '2014-07-11 07:45:16 +0000'
 categories:
 - 间隔拍摄
 tags: []

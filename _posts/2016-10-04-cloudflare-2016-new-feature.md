@@ -6,15 +6,15 @@ title: Cloudflare 2016 年末新功能
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 2031
 wordpress_url: https://ze3kr.com/?p=2031
-date: '2016-10-04 09:26:00 -0400'
-date_gmt: '2016-10-04 01:26:00 -0400'
+date: '2016-10-04 09:26:00 +0000'
+date_gmt: '2016-10-04 01:26:00 +0000'
 categories:
 - 开发
 tags: []
@@ -35,5 +35,7 @@ tags: []
 <h3>通过 DNS 实现（GeoDNS + 权重）</h3>
 <p>使用此功能不需要开启它的 CDN 功能，故访客是直接连接源站的。同上一种方式也是配置一个 Group，只是不开启 CDN 功能，然后 Cloudflare 会只作为 DNS 服务器的功能。它会自动进行 GeoDNS，给访客返回最近的服务器的 IP 地址，同样也支持 Health Check 功能，当服务器宕机后会自动切换解析。</p>
 <p>不同于其他的 DNS 解析商，Cloudflare 真正做到了智能，只需要配置一个 Group 即可，剩下的 Cloudflare 会自动搞定，而不是去手动地选择哪一个地区解析到哪一个服务器。</p>
+<p>此功能已经被我测试，目前的测试期间，GeoDNS 的定位功能是根据请求最终抵达的 CloudFlare 的服务器来决定的，也就是说是依靠 Anycast 系统来决定的。然而中国用户绝大多数会被运营商定向到 CloudFlare 的美国西部服务器，于是就会被 GeoDNS 系统解析道美国西部位置所对应的结果。所以此功能还是十分有限，不适合国内使用。</p>
 <h2>Traffic Control</h2>
 <p>Cloudflare 终于可以限制 IP 的请求速率，此功能能够相当有效的过滤 CC 攻击，而且对于普通访客几乎没有影响（以前只能通过 I'm under attack 功能实现，然而这个功能会让所有用户等 5 秒才能载入）。它可以根据不同的路径配置不同的请求速率，还能够实现防止暴力破解密码、防止 API 接口滥用等功能。</p>
+<p>[modified github="ZE3kr/ZE3kr"]更新 GeoDNS 实际使用体验[/modified]</p>

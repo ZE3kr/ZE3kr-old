@@ -6,15 +6,15 @@ title: 新开发的网页软件：“猜猜我说了什么”
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1483
 wordpress_url: https://www.ze3kr.com/?p=1483
-date: '2016-04-03 21:17:31 -0400'
-date_gmt: '2016-04-03 13:17:31 -0400'
+date: '2016-04-03 21:17:31 +0000'
+date_gmt: '2016-04-03 13:17:31 +0000'
 categories:
 - 开发
 tags: []

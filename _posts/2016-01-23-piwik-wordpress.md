@@ -6,15 +6,15 @@ title: Piwik 与 WordPress 配合使用，建立强大统计系统
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 70
 wordpress_url: https://xn--oor13x.tlo.xyz/?p=70
-date: '2016-01-23 08:00:00 -0500'
-date_gmt: '2016-01-23 00:00:00 -0500'
+date: '2016-01-23 08:00:00 +0000'
+date_gmt: '2016-01-23 00:00:00 +0000'
 categories:
 - 开发
 tags:

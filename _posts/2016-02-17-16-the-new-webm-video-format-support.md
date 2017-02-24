@@ -6,15 +6,15 @@ title: 本站将新增 WEBM 视频格式支持
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1248
 wordpress_url: https://www.ze3kr.com/?p=1248
-date: '2016-02-17 09:01:41 -0500'
-date_gmt: '2016-02-17 01:01:41 -0500'
+date: '2016-02-17 09:01:41 +0000'
+date_gmt: '2016-02-17 01:01:41 +0000'
 categories:
 - 短文
 tags: []

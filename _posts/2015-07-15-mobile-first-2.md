@@ -6,15 +6,15 @@ title: 移动优先 &#8211; 速度
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 34
 wordpress_url: http://webdev.tlo.xyz/?p=34
-date: '2015-07-15 14:00:25 -0400'
-date_gmt: '2015-07-15 06:00:25 -0400'
+date: '2015-07-15 14:00:25 +0000'
+date_gmt: '2015-07-15 06:00:25 +0000'
 categories:
 - 开发
 tags:

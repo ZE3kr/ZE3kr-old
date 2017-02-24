@@ -6,15 +6,15 @@ title: Withings Activité Pop 智能手表推荐，睡眠跟踪、运动记录�
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 220
 wordpress_url: http://ze3kr.tlo.xyz/?p=220
-date: '2015-11-20 17:27:29 -0500'
-date_gmt: '2015-11-20 09:27:29 -0500'
+date: '2015-11-20 17:27:29 +0000'
+date_gmt: '2015-11-20 09:27:29 +0000'
 categories:
 - 科技
 tags:
@@ -33,7 +33,7 @@ tags:
 <h2>超长续航</h2>
 <p>续航时间长达 8 个月，使用标准纽扣电池。</p>
 <h2>视频</h2>
-<p>[video width="960" height="540" mp4="https://s3.tlo.link/sites/2/20160131140734/322645387_1-540p.mp4" poster="https://s3.tlo.link/sites/2/20160131140507/502160820-1200x675.jpg"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/20160131140734/322645387_1-540p.mp4" poster="https://cdn.tloxygen.com/sites/2/20160131140507/502160820-1200x675.jpg"][/video]</p>
 <h2>图片</h2>
 <p>[img id="841" size="medium"][/img]</p>
 <p>[img id="824" size="medium"][/img]</p>

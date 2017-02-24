@@ -6,26 +6,27 @@ title: 自建 PowerDNS 智能解析服务器
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1832
 wordpress_url: https://ze3kr.com/?p=1832
-date: '2016-08-03 09:24:21 -0400'
-date_gmt: '2016-08-03 01:24:21 -0400'
+date: '2016-08-03 09:24:21 +0000'
+date_gmt: '2016-08-03 01:24:21 +0000'
 categories:
 - 开发
 tags:
 - DNS
 - VPS
 ---
-<p>最近我越来越喜欢自建一些东西，比如 GitLab。今天我又把 DNS 服务器改成自建的了，分享一下经验：</p>
+<p style="text-align: left;">最近我越来越喜欢自建一些东西，比如 GitLab。今天我又把 DNS 服务器改成自建的了，分享一下经验（PS：现在为了实现<a href="https://ze3kr.com/2017/01/wordpress-full-site-cdn/">根域名 CDN</a>，我用换成了 Route 53）：</p>
+<h2>优缺点</h2>
 <p>首先，我先说用自建 DNS 服务器的<strong>致命坏处</strong>：</p>
 <ol>
 <li>如果那天自己的服务器挂了，整个域名相关服务都会挂，即使你邮件收信服务器是用的是第三方的，你也不能收信了</li>
-<li>基本上必须是开放端口，并有<strong>固定 IP</strong>（而且最好还需要至少两个 IP） 的 VPS</li>
+<li>基本上必须是开放端口，并有<strong>固定 IP</strong>（而且最好还需要至少两个 IP） 的 VPS（当然也可以是两个主机，只需要保证配置文件完全相同即可）</li>
 <li>个人一般关于 DNS 运维经验不足，容易导致配置错误</li>
 <li>第三方 DNS 提供商基本都有 DDOS 防御，而你的服务器可不一定有，攻击者可以直接通过 L7 DNS Flood 攻击掉你的服务器，然后又回到第一个问题上了</li>
 </ol>
@@ -33,7 +34,7 @@ tags:
 <p><!--more--></p>
 <ol>
 <li>可 DIY 程度极大，各种 DNS 方面功能几乎都能配置，但却又都十分复杂</li>
-<li>可以建在已有的服务器上，不用额外花钱（但也不一定，请看下文）</li>
+<li>可以建在已有的服务器上，不用额外花钱</li>
 </ol>
 <p>最终我还是选择了使用 PowerDNS 软件（这其实也是很多提供 DNS 服务的服务商所使用的），我安装它的最近才出的 4.0 版本，这个版本支持的一些特性：</p>
 <ul>
@@ -43,7 +44,8 @@ tags:
 <li>IPv6</li>
 </ul>
 <p>等等，以上只是我想到的。同时 PowerDNS 支持超多的解析记录种类（至少是我目前见过最多的）：A、AAAA、AFSDB、ALIAS（也是 ANAME）、CAA、CERT、CDNSKEY、CDS、CNAME、DNSKEY、DNAME、DS、HINFO、KEY、LOC、MX、NAPTR、NS、NSEC、NSEC3、NSEC3PARAM、OPENPGPKEY、PTR、RP、RRSIG、SOA、SPF、SSHFP、SRV、TKEY、TSIG、TLSA、TXT、URI 等，还有不常用的没有列出来，见<a href="https://doc.powerdns.com/md/types/" target="_blank">所有支持的记录</a>。说实话有一些冷门的记录很多解析商都不支持，但我又需要用，比如 LOC、SSHFP 和 TLSA。不知道这一堆记录是干什么的？请见<a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types" target="_blank">维基百科</a>。</p>
-<p>安装方法<a href="https://doc.powerdns.com/md/authoritative/installation/" target="_blank">见此</a>，需要先安装 <code>pdns-server</code> ，然后再安装 <code>pdns-backend-$backend</code> 。Backend 是你可以自己选的，常用的有 <code>BIND</code> 和 <code>Generic MySQL</code> ，需要 GEODNS 可以用 <code>GEOIP</code> ，所有列表<a href="https://doc.powerdns.com/md/authoritative/" target="_blank">见此</a>。如果想做网页版控制后台，使用 MySQL 的可能比较方便。如果只是通过文件形式控制，那么 BIND 和 GEOIP 都可以。</p>
+<h2>简述安装过程</h2>
+<p>详情安装方法<a href="https://doc.powerdns.com/md/authoritative/installation/" target="_blank">见官方文档</a>，需要先安装 <code>pdns-server</code> ，然后再安装 <code>pdns-backend-$backend</code> 。Backend 是你可以自己选的，常用的有 <code>BIND</code> 和 <code>Generic MySQL</code> ，需要 GEODNS 可以用 <code>GEOIP</code> ，所有列表<a href="https://doc.powerdns.com/md/authoritative/" target="_blank">见此</a>。如果想做网页版控制后台，使用 MySQL 的可能比较方便。如果只是通过文件形式控制，那么 BIND 和 GEOIP 都可以。</p>
 <p>我使用 GEOIP 版本的，GEOIP 版本可拓展性强，使用 YAML 文件，更灵活、优雅，本文就讲讲 GEOIP 版本：</p>
 <p>在 Ubuntu 上安装（系统软件源里就有）：</p>
 <pre class="lang:sh decode:true">$ sudo apt install pdns-server
@@ -96,7 +98,7 @@ domains:
       - aaaa: # 你的服务器的第一个 IPv6 地址
           content: ::1
           ttl: 86400
-    ns1.example.com: # 你的服务器的第二个 IPv4 地址（如果没有就和上面一样）
+    ns2.example.com: # 你的服务器的第二个 IPv4 地址（如果没有就和上面一样）
       - a:
           content: 10.0.0.2
           ttl: 86400
@@ -171,7 +173,7 @@ domains:
 <p>这个配置，就相当于把 www.example.com 给分区解析，由于目前这个解析存在一些问题，导致不能同时在根域名和子域名下设置 GEODNS，这个 Bug 我<a href="https://github.com/PowerDNS/pdns/issues/4276" target="_blank">已经提交反馈</a>了。</p>
 <p>如果你想只把解析精度设在洲级别，那么就直接 %cn.geo.example.com 这样少写一级就行了。如果你需要精确到城市，那么多写一级就行，但是需要在配置文件中添加 GeoIP 城市的数据库。然而免费的城市数据库的城市版本并不精准，你还需要去购买商业数据库，这又是一个额外开销。</p>
 <h3>配置域名</h3>
-<p>前往你的域名注册商，进入后台修改设置，给域名添加上子域名服务器记录，如图：</p>
+<p>前往你的域名注册商，进入后台修改设置，给域名添加上子域名服务器记录，如图（这相当于 <a href="https://ze3kr.com/2016/12/domain-name-system/">Glue 记录</a>，听说万网加这记录还要一个十块，可怜！<a href="https://domain.tloxygen.com/domain-registration/promos.php?promo=ze3kr" target="_blank">换个域名注册商</a>吧，这玩意应该一分钱不交的）：</p>
 <p>[img id="1837" size="large"][/img]</p>
 <p>由于要设置的 NS 是在自己服务器下的，所以务必要在域名注册商上向上级域名（如 .com）注册你的 NS 服务器 IP 地址，这样上级域名就能解析道 NS 的 IP，自建 DNS 才能使用，比如 icann.org 下就有一个属于自己的 NS：</p>
 <pre class="lang:sh decode:true">$ dig icann.org ns +short
@@ -241,7 +243,7 @@ $ pdnsutil show-zone example.com
 </pre>
 <p>最后一个指令所返回的结果就是你需要在域名注册商设置的记录，不推荐都设置，只设置 ECDSAP256SHA256 - SHA256 digest 就行了。</p>
 <p>最后在线检查设置即可 <a href="http://dnssec-debugger.verisignlabs.com/" target="_blank">测试地址1</a> <a href="http://dnsviz.net" target="_blank">测试地址2</a>，可能有几天缓存时间。</p>
-<p>我的检查 <a href="https://ze3kr.com/wp-content/uploads/sites/2/2016/08/ze3kr.com-2016-08-03-09_14_58-UTC.png" target="_blank">结果1</a> <a href="http://dnsviz.net/d/ze3kr.com/dnssec/" target="_blank">结果2</a></p>
+<p>我的检查<a href="http://dnsviz.net/d/ze3kr.com/dnssec/" target="_blank">结果</a></p>
 <h3>其他一些有趣的东西</h3>
 <p>你可以在 YAML 里写上这个，为了方便你调试：</p>
 <pre class="">"*.ip.example.com":
@@ -287,7 +289,7 @@ ns2.ze3kr.com.		172800	IN	AAAA	2001:470:8c29::1
 <p>其中是两个 IPv4 两个 IPv6，属于两个 VPS 的，这样一个挂了之后还有备份，更加稳定。</p>
 <h4>Anycast or Unicast?</h4>
 <p>像我这种分布式的 DNS，其实就是 Unicast，每个主机一个 IP，这样存在的一个问题就是在一个地方连接其中一个会比较快，但是另一个会比较慢。只有在用支持异步查询，或者是带 GeoIP 的 DNS 缓存服务器，才有可能连接到最快的 DNS 权威服务器，其他情况下则是随机连接，而且如果一个服务器挂掉了，那么服务器对应的 IP 就废了。</p>
-<p>Anycast 是一个 IP 对应多个主机，然而我却没有条件用，这个对于个人来说也许成本会比较高，要么你自己有 AS 号然后让主机商给你接入，要么你的主机商提供跨区域的 Load Balancing IP。我的 VPS 在两个不同的主机商，也没有 AS，就不能用 Anycast 了。我觉得 DNS 服务如果可能还是要用 Anycast，因为 DNS 服务器对应的 IP 不能 GEODNS（因为这是根域名给你解析的），使用 Anycast 后就基本能保障最快的连接速率，并且一个服务器挂了 IP 还能用。</p>
+<p>Anycast 是一个 IP 对应多个主机，然而我却没有条件用，这个对于个人来说也许成本会比较高，要么你自己有 AS 号然后让主机商给你接入，要么你的主机商提供跨区域的 Load Balancing IP。我的 VPS 在两个不同的主机商，也没有 AS，就不能用 Anycast 了。我觉得 DNS 服务如果可能还是要用 Anycast，因为 DNS 服务器对应的 IP 不能 GEODNS（因为这是根域名给你解析的），使用 Anycast 后就基本能保障最快的连接速率，并且一个服务器挂了 IP 还能用。此外，DNS 必须要同时转发 TCP 和 UDP 的 53 端口。</p>
 <h3>宕机自动切换</h3>
 <p>如何实现宕机自动切换？实现这个的流程是：</p>
 <p>监控服务发现宕机 -&gt; 向服务器发送已经宕机的请求 -&gt; 服务器对宕机处理，解析到备用 IP/暂停解析</p>

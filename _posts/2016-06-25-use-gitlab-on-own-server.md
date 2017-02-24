@@ -6,15 +6,15 @@ title: 在自己服务器上安装 GitLab，代替 GitHub！
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1731
 wordpress_url: https://ze3kr.com/?p=1731
-date: '2016-06-25 21:12:08 -0400'
-date_gmt: '2016-06-25 13:12:08 -0400'
+date: '2016-06-25 21:12:08 +0000'
+date_gmt: '2016-06-25 13:12:08 +0000'
 categories:
 - 开发
 tags:

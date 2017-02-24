@@ -6,15 +6,15 @@ title: 从 Vultr 迁至 OVH & SunnyVision
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1742
 wordpress_url: https://ze3kr.com/?p=1742
-date: '2016-07-09 11:01:00 -0400'
-date_gmt: '2016-07-09 03:01:00 -0400'
+date: '2016-07-09 11:01:00 +0000'
+date_gmt: '2016-07-09 03:01:00 +0000'
 categories:
 - 短文
 tags:

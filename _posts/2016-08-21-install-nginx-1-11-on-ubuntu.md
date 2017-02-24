@@ -2,19 +2,19 @@
 layout: post
 status: publish
 published: true
-title: 安装 Nginx 1.11、使用免费 Let's Encrypt 实现 ECDSA/RSA 双证书
+title: 使用免费 Let's Encrypt 实现 ECDSA/RSA 双证书
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1904
 wordpress_url: https://ze3kr.com/?p=1904
-date: '2016-08-21 10:52:13 -0400'
-date_gmt: '2016-08-21 02:52:13 -0400'
+date: '2016-08-21 10:52:13 +0000'
+date_gmt: '2016-08-21 02:52:13 +0000'
 categories:
 - 开发
 tags: []
@@ -46,7 +46,7 @@ configure arguments: --with-cc-opt='-g -O2 -fstack-protector-strong -Wformat -We
 <pre class="lang:sh decode:true">$ mkdir -p /etc/letsencrypt
 $ mkdir -p /etc/letsencrypt/rsa
 $ mkdir -p /etc/letsencrypt/ecdsa</pre>
-<p>然后修改 Nginx 配置文件，确保所有在监听 80 端口的都有 `location ^~ /.well-known/acme-challenge/` 区块，本配置文件是强制跳转 HTTPS 的案例，这是源站的配置：</p>
+<p>然后修改 Nginx 配置文件，确保所有在监听 80 端口的都有 <code>location ^~ /.well-known/acme-challenge/</code> 区块，本配置文件是强制跳转 HTTPS 的案例，这是源站的配置：</p>
 <pre class="lang:ini decode:true">server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
@@ -69,12 +69,12 @@ $ mkdir -p /etc/letsencrypt/ecdsa</pre>
 <p>卸载 <code>acme.sh</code> 自带的 cron，自己重新配置：</p>
 <pre class="lang:sh decode:true">$ acme.sh --uninstallcronjob
 $ vim /etc/cron.d/renew-letsencrypt</pre>
-<p>输入以下内容，注意替换 `acme.sh` 的路径为你安装的绝对路径：</p>
+<p>输入以下内容，注意替换 <code>acme.sh</code> 的路径为你安装的绝对路径：</p>
 <pre class="lang:sh decode:true">15 02 * * * root /path/to/acme.sh --cron --certhome /etc/letsencrypt/rsa
 20 02 * * * root /path/to/acme.sh --cron --ecc --certhome /etc/letsencrypt/ecdsa</pre>
 <p>然后就完成了，证书会自动续签。</p>
-<h3>给证书添加域名</h3>
-<p>因为 Let's Encrypt 使用的不是通配符域名，所以会经常遇到有新的子域的情况，此时就需要给证书添加域名，最简单的添加方法如下：</p>
+<h3>给证书添加或删除域名</h3>
+<p>因为 Let's Encrypt 使用的不是通配符域名，所以会经常遇到有新的子域的情况，此时就需要给证书添加域名，一张证书最多可以添加 100 个域名。最简单的添加方法如下：</p>
 <p>首先，修改证书的配置文件，两个证书的配置文件都要修改：</p>
 <pre class="lang:sh decode:true">$ vim /etc/letsencrypt/rsa/example.com/example.com.conf
 $ vim /etc/letsencrypt/ecdsa/example.com_ecc/example.com.conf</pre>

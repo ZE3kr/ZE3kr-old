@@ -6,15 +6,15 @@ title: Google Compute Engine 使用体验
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1933
 wordpress_url: https://ze3kr.com/?p=1933
-date: '2016-10-01 11:00:48 -0400'
-date_gmt: '2016-10-01 03:00:48 -0400'
+date: '2016-10-01 11:00:48 +0000'
+date_gmt: '2016-10-01 03:00:48 +0000'
 categories:
 - 开发
 tags:
@@ -28,6 +28,12 @@ tags:
 <p>GCE 的价格比较亲民，最低配 1 共享核-0.6 GB 内存-10GB HDD 每月只需要不到 5 美元，而且由于 CPU、内存大小和磁盘大小都是可调的，所以可以根据自己的需要去购买最适合的，能省去不必要的开销。</p>
 <p>流量的话对于所有的可用区，<strong>连中国大陆 $0.23/Gbyte</strong>、美欧地区 $0.12/Gbyte，流量的价格有些小贵，但是如果是连接 Google 自己的服务的话（包括但不限于 Gmail、YouTube），流量不计费（但是流量是双向的，所以只是免了 50%）。</p>
 <p>GCE 还有一点比较特殊的是它是按分钟计费的，当服务处于终止状态（相当于关机，磁盘数据保留）时，不收取费用（除了少量的磁盘使用费用）。每次计算 Uptime 时，如果不到 10 分钟则一律按十分钟算，超过 10 分钟后才是真正的按分钟计费，不过还是很划算了。</p>
+<h3>关于共享核的实例的补充</h3>
+<p>f1-micro（0.6 GB）和 g1-small（1.7GB）这两个版本使用的是共享核心（其余配置都是独立核心），根据 Google 的说明，0.60GB 是 0.2 vCPU，1.70GB 是 0.5 vCPU。但是却支持 Bursting，也就是短时间内最高能使用到 1.0 vCPU。</p>
+<p>那么 1.0 vCPU 是多少呢？查 cpuinfo，是 Intel(R) Xeon(R) CPU @ 2.50GHz。也就是说这两个版本最高能占用到 2.5GHz。但是假如长时间占用，速度就会压缩到 0.5GHz 和 1.75 GHz。</p>
+<p><img class="aligncenter size-medium wp-image-2473" src="https://cdn.tloxygen.com/sites/2/2016/10/Screenshot-2017-01-27-09.51.13-450x159.png" alt="" width="450" height="159" /></p>
+<p>我的 f1-micro 装了监控软件，对比 GCE 给的 CPU 占用率（<span style="color: #4c00ff;">深蓝色</span>）和系统自己监控到的占用率（<span style="color: #008cff;">浅蓝色</span>），发现 GCE 图表上统计的 CPU 占用率正好是本地统计的 5 倍，也就是说如果本地看到的 CPU 占用是 20%，GCE 图表上显示的就正好是 100%，本地为 20~100%，GCE 图表上就是 100~500%，这时就算作 Bursting 了。</p>
+<p>和其他 VPS 对比，其他的 VPS 也几乎都是共享核心，但你却无从判断是否超售。比如有 10 个用户共用一个核心，如果那 10 个人都在不停的占用 CPU，那么你的 CPU 速度会低于单核的十分之一。而 Google 的共享核心，保证了一个最低的速度（0.2 vCPU 和 0.5 vCPU），就算其他用户用的再狠，也能给你保证一定的速度。</p>
 <h2>使用流程以及配置方法</h2>
 <p>首先需要前往<a href="https://console.cloud.google.com/compute/instancesAdd" target="_blank">创建实例</a>的页面，然后进行配置</p>
 <h3>基础配置</h3>

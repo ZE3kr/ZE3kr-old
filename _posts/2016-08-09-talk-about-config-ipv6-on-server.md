@@ -6,15 +6,15 @@ title: 如何配置以实现纯 IPv6-Only 网络访问
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1804
 wordpress_url: https://ze3kr.com/?p=1804
-date: '2016-08-09 20:32:16 -0400'
-date_gmt: '2016-08-09 12:32:16 -0400'
+date: '2016-08-09 20:32:16 +0000'
+date_gmt: '2016-08-09 12:32:16 +0000'
 categories:
 - 开发
 tags:
@@ -37,8 +37,8 @@ tags:
 <p>如果你的根域名不支持 IPv6，那么你可以联系根域名那里让他们去支持，或者换一个根域名。如果你的一级域名不支持 IPv6，那就联系 DNS 解析商让他们支持，或者直接换走。</p>
 <h2>让网站、API 等服务器支持 IPv6</h2>
 <h3>方案一，直接配置 IPv6</h3>
-<p>也就是让你自己的服务器支持 IPv6，这需要联系你的服务器提供商，让他们给你分配一个 IPv6 地址，如果还是不支持 IPv6，那么可以使用 IPv6 Tunnel Broker，比如 Hurricane Electric 的免费 Tunnel Broker，这样肯定没有服务商给你的原生的 IPv6 好（但也未必），但是在服务商支持原生 IPv6 之前只能先用着。Tunnel Broker <strong>相当于建立在网络层（第三层）上的代理</strong>，需要你的服务器的操作系统支持，而且服务器必须要有一个固定的 IPv4 地址。为了使用它你需要在系统里重新配置网卡（所以共享主机就没戏了），然后就能按照正常方法使用 IPv6 了，简直零成本支持 IPv6。</p>
-<p>很可惜，我目前的两个服务器暂时都没有原生的 IPv6 可以用，于是只能用 Tunnel Broker 了，使用后发现虽然是免费的，但是效果也不错：下载时似乎没有限速，我 100M 的独享带宽在原生的 IPv4 上下载速度为 12Mbyte/s，在 IPv6 上还几乎是这个速度。Ping 延迟还是会有一些增加的，主要是因为 Tunnel Broker 的服务器连接到你的服务器会有一些延迟，它相当于一个代理，所以创建时一定要选择离你服务器最近的 Tunnel Broker，而不是里用户最近的 Tunnel Broker。</p>
+<p>也就是让你自己的服务器支持 IPv6，这需要联系你的服务器提供商，让他们给你分配一个 IPv6 地址，如果还是不支持 IPv6，那么可以使用 IPv6 Tunnel Broker，比如 Hurricane Electric 的免费 Tunnel Broker，这样肯定没有服务商给你的原生的 IPv6 好（但也未必），但是在服务商支持原生 IPv6 之前只能先用着。Tunnel Broker <strong>相当于建立在网络层（第三层）上的代理</strong>，需要你的服务器的操作系统支持，而且服务器必须要有一个固定的 IPv4 地址。为了使用它你需要在系统里重新配置网卡（所以共享主机就没戏了），然后就能按照正常方法使用 IPv6 了，简直零成本支持 IPv6。注意，主机到 Tunnel Broker 传输是明文，不过只要应用程序都使用安全的协议（如 HTTPS、SMB、SFTP、SSH），这不是问题。</p>
+<p>很可惜，我目前的两个服务器暂时都没有原生的 IPv6 可以用，于是只能用 Tunnel Broker 了，使用后发现虽然是免费的，但是效果也不错：下载时似乎没有限速，我 100M 的独享带宽在原生的 IPv4 上下载速度为 12Mbyte/s，在 IPv6 上还几乎是这个速度。Ping 延迟还是会有一些增加的，主要是因为 Tunnel Broker 的服务器连接到你的服务器会有一些延迟，它相当于一个代理，所以创建时一定要选择离你服务器最近的 Tunnel Broker（延迟最短的），而不是里用户最近的 Tunnel Broker。</p>
 <p>在服务器支持了 IPv6 后，确保域名上也新设置了 AAAA 记录解析到了 IPv6 地址上。</p>
 <h3>方案二，上 CDN/HTTP Proxy</h3>
 <p>刚才所介绍的方案是直接支持，或者使用 Tunnel Broker 建立在网络层的代理。当然还有另一种代理的方式，那就是建立在应用层（第七层）上的，建立在第七层上的其实就是 HTTP Proxy，不过大多数提供 HTTP Proxy 功能的地方都能够缓存静态内容，所以也就是 CDN。</p>

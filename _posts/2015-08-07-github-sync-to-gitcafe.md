@@ -6,15 +6,15 @@ title: GitHub 实时同步到 GitCafe，并解决百度无法抓取 GitHub Pages
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 158
 wordpress_url: http://ze3kr.tlo.xyz/?p=158
-date: '2015-08-07 22:28:37 -0400'
-date_gmt: '2015-08-07 14:28:37 -0400'
+date: '2015-08-07 22:28:37 +0000'
+date_gmt: '2015-08-07 14:28:37 +0000'
 categories:
 - 科技
 tags:
@@ -70,7 +70,7 @@ HTML;
 </pre>
 <p>首先进入你的 GitHub 项目中的 Webhooks（Settings &gt; Webhooks &amp; Services &gt; Add webhook），然后填写内容。Secret可以不填写，为了方便起见只好用一种不安全的方式——加一个 GET 请求。Payload URL 里就填写刚才添加的 Openshift 程序的网址＋新创建的实现自动同步的文件目录＋GET 请求。</p>
 <p>[img size="medium" id="832"][/img]<br />
-<a href="https://s3.tlo.link/sites/2/20160131134448/sync2.png" rel="attachment wp-att-832"><img src="https://s3.tlo.link/sites/2/20160131134448/sync2-450x319.png" alt="sync2" width="450" height="319" class="aligncenter size-medium wp-image-832" /></a></p>
+<a href="https://cdn.tloxygen.com/sites/2/20160131134448/sync2.png" rel="attachment wp-att-832"><img src="https://cdn.tloxygen.com/sites/2/20160131134448/sync2-450x319.png" alt="sync2" width="450" height="319" class="aligncenter size-medium wp-image-832" /></a></p>
 <p>等到下次 Push 后，进这里查看结果，查看是否成功。</p>
 <p>同样的，如果你想当 GitCafe 被 Push 后也同步到 GitHub，也只需要在 GitCafe 上配置好相同的 Webhooks。</p>
 <p>[img size="medium" id="831"][/img]</p>

@@ -6,15 +6,15 @@ title: 几个 WordPress 的加速建议
 author:
   display_name: ZE3kr
   login: ZE3kr
-  email: ze3kr@tlo.xyz
+  email: ze3kr@icloud.com
   url: https://ze3kr.com
 author_login: ZE3kr
-author_email: ze3kr@tlo.xyz
+author_email: ze3kr@icloud.com
 author_url: https://ze3kr.com
 wordpress_id: 1709
 wordpress_url: https://ze3kr.com/?p=1709
-date: '2016-06-09 17:36:00 -0400'
-date_gmt: '2016-06-09 09:36:00 -0400'
+date: '2016-06-09 17:36:00 +0000'
+date_gmt: '2016-06-09 09:36:00 +0000'
 categories:
 - 开发
 tags:
