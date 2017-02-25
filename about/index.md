@@ -24,7 +24,7 @@ tags: []
 <li><a href="https://ze3kr.com/press/">媒体资讯</a></li>
 </ul>
 <h2>关于网站</h2>
-<p>网站使用 WordPress，使用 Google 提供的主机，位于台湾。</p>
+<p>网站使用 WordPress，使用 Google 提供的主机，位于台湾。你也可以<a href="https://github.com/ZE3kr/ZE3kr" target="_blank">在 GitHub 上</a>找到本站所有文章的 Markdown 纯文本版本及历史。</p>
 <p>就目前来看维护这个网站所花费的还不是那么多，所以本网站提供免费的服务。希望能够正确的使用<a href="https://ze3kr.com/license/">协议</a>或是<a href="https://zh.wikisource.org/wiki/中华人民共和国著作权法#.E7.AC.AC.E5.9B.9B.E8.8A.82.E3.80.80.E6.9D.83.E5.88.A9.E7.9A.84.E9.99.90.E5.88.B6" target="_blank">合理使用</a>将本站分享给更多的人！此外，你还可以<strong><a href="https://domain.tloxygen.com/" target="_blank">从我这里购买</a>域名和主机</strong>以支持本站做的更好。</p>
 <p>本站启用了 Pingback，当你链接到本站后本站评论区会自动显示你的文章。考虑到很多 CMS 不支持 Pingback 功能，我会不定期的检查本站访客来源地址，手动添加 Pingback，这算是对你们分享的回报吧，希望能够<strong>互相支持、互相带来流量！</strong>现在你也可以手动提交<a href="https://ze3kr.com/links/">互链</a>请求，收录更快！</p>
 <h2>关于版权</h2>

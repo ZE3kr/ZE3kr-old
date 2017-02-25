@@ -260,3 +260,4 @@ define( 'UPYUN_KEY', 'password' ); // 操作员密码</pre>
 <ul>
 <li><strong>管理后台</strong>（直接台湾服务器），管理界面全部回源，直接在 Google Compute Engine 上使用 HTTPS 加密，与浏览器之间是全程加密。</li>
 </ul>
+<p>[modified github="ZE3kr/ZE3kr"]添加关于插件的补充[/modified]</p>
