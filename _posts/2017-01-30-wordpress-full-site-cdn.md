@@ -147,7 +147,7 @@ $ dig @8.8.8.8 +short ze3kr.com aaaa
 <p>有一点不同的是，Cloudflare 签发的是共享证书，证书样式如下：</p>
 <p><img class="aligncenter size-medium wp-image-2615" src="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-29-19.13.26-450x287.png" alt="" width="450" height="287" /></p>
 <p>我觉得 Cloudflare 签发共享证书有两个原因，一是历史遗留问题：Cloudflare 专业版的 SSL 证书服务是支持无 SNI 的客户端的，而为了支持无 SNI 的客户端，一个 IP 就只能配置一个证书，所以就使用了共享证书节约 IP 资源。而现在免费版也有了 SSL，虽然免费版使用了 SNI 技术，但是证书总不能比付费版本还要高级吧，于是还是使用了共享 SSL 证书；二是为了增加更多的增值服务，现在 Cloudflare 上可以购买 Dedicated SSL Certificates，实现独立的证书（如果是付费版本启用，不支持 SNI 的客户端仍然 Fall back 到共享证书，所以仍然兼容不支持 SNI 的设备）。</p>
-<p>我为免费版的 Cloudflare 写了一个插件，配合在 Cache Rules 开启了 Cache Everything 的网站使用：<a href="https://cdn.tloxygen.com/sites/2/2017/02/full-site-cache-cflare.zip">full-site-cache-cflare.zip</a>，需要在 wp-config.php 下配置如下内容：</p>
+<p>我为免费版的 Cloudflare 写了一个插件，配合在 Cache Rules 开启了 Cache Everything 的网站使用：<a href="https://cdn.tloxygen.com/sites/2/2017/02/full-site-cache-cflare-0-0-2.zip">full-site-cache-cflare.zip</a>，需要在 wp-config.php 下配置如下内容：</p>
 <pre class="lang:php decode:true">$tlo_cflare_id[1] = '8219cf1874036f405e85e7453bb1795f'; // Zone ID
 define( 'CLOUDFLARE_EMAIL', 'username@example.com' ); // 登录邮箱
 define( 'CLOUDFLARE_KEY', '03fac7b886ca92887466ea59f04636c1c9dbd' ); // API Key</pre>
@@ -194,7 +194,7 @@ define( 'CLOUDFLARE_KEY', '03fac7b886ca92887466ea59f04636c1c9dbd' ); // API Key<
 <li>可配置国内外 CDN 混用</li>
 </ul>
 <p>UPYUN 和下面的 KeyCDN 签发的都是 Let's Encrypt 的独立证书，但都是单域名证书，甚至有 www 和无 www 的都要单独申请。</p>
-<p>我也为 UPYUN 写了一个插件，适合开启了全局缓存时间的网站使：<a href="https://cdn.tloxygen.com/sites/2/2017/02/full-site-cache-upy.zip">full-site-cache-upy.zip</a>，需要在 wp-config.php 下配置如下内容：</p>
+<p>我也为 UPYUN 写了一个插件，适合开启了全局缓存时间的网站使：<a href="https://cdn.tloxygen.com/sites/2/2017/02/full-site-cache-upy-0-0-2.zip">full-site-cache-upy.zip</a>，需要在 wp-config.php 下配置如下内容：</p>
 <pre class="lang:php decode:true">$tlo_upy_id[1] = 'name'; // 服务名称
 define( 'UPYUN_NAME', 'user' ); // 操作员用户名
 define( 'UPYUN_KEY', 'password' ); // 操作员密码</pre>
@@ -260,4 +260,4 @@ define( 'UPYUN_KEY', 'password' ); // 操作员密码</pre>
 <ul>
 <li><strong>管理后台</strong>（直接台湾服务器），管理界面全部回源，直接在 Google Compute Engine 上使用 HTTPS 加密，与浏览器之间是全程加密。</li>
 </ul>
-<p>[modified github="ZE3kr/ZE3kr"]添加关于插件的补充[/modified]</p>
+<p>[modified github="ZE3kr/ZE3kr"]修复插件对评论状态影响的 Bug，添加关于插件的补充[/modified]</p>

@@ -19,4 +19,5 @@ categories:
 - 间隔拍摄
 tags: []
 ---
+<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/20160131145518/2v2-540p.mp4" poster="https://cdn.tloxygen.com/sites/2/20160131141231/2014-07-11-1200x675.jpg" webm="https://cdn.tloxygen.com/sites/2/20160217154108/2v2-540p.webm"][/video]</p>
 <p>在北京的间隔拍摄，使用 iPhone 5s 的内置相机录制。</p>

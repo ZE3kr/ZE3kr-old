@@ -43,3 +43,4 @@ html[lang="zh-CN"] textarea {<br />
 <p>.aboutheaderimage { float:right; }</p>
 <p>.aboutheaderimage a { color: #888!important; }</p>
 <p>.site-title {text-transform: none;}</p>
+<p>.wp-video { width:100%!important; }</p>

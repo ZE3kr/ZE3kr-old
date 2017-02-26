@@ -20,4 +20,5 @@ categories:
 tags:
 - 航拍
 ---
+<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/20160131142342/9-540p.mp4" poster="https://cdn.tloxygen.com/sites/2/20160131140908/2015-08-27-1200x675.jpg" webm="https://cdn.tloxygen.com/sites/2/20160217181931/9-540p.webm"][/video]</p>
 <p>使用无人机航拍，包含北京通州运河、迪庆香格里拉。</p>
