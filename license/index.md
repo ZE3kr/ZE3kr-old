@@ -33,7 +33,7 @@ tags: []
 </li>
 </ul>
 <h2>本网站文字、图片部分 CC BY-NC-SA</h2>
-<p>包括但不限于文章主体、文章插图、文章特色图像以及页头图像，采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。如果你需要外链，请将媒体的域名部分替换为 `cdn.tloxygen.com` ，否则将无法外链。此协议的摘要：</p>
+<p>包括但不限于文章主体、文章插图、文章特色图像以及页头图像，采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。如果你想要直接外链本站的图片，请确保已经将图片地址的域名部分替换为 `cdn.tloxygen.com` ，否则将无法外链。此协议的摘要：</p>
 <p><strong>你可自由：</strong></p>
 <ul>
 <li><strong>分享</strong> — 复制、发行、展览、表演、放映、广播或通过信息网络传播本作品</li>
