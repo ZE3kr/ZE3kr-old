@@ -23,7 +23,7 @@ tags:
 <h2>EWWW Image Optimizer</h2>
 <p>无损及有损压缩 JPEG 和 PNG 图像，支持压缩已有的图像，可以加快访问者加载图片的速度。同时支持 JPEG 的渐进式加载。正常情况下，网速低时，图片是一点点从上往下加载，<b>而使用渐进式加载，则是先加载这个图片的低分辨率版本，然后逐渐变得清晰。</b>我已经成为这个插件的付费用户，能够进一步有损压缩 PNG 和 JPEG 格式图片、降低服务器 CPU 占用（否则每上传一张图片，CPU 都消耗很多）。</p>
 <h2>Autoptimize</h2>
-<p><img class="aligncenter size-medium wp-image-1029" src="https://cdn.tloxygen.com/sites/2/20160201140304/2016-01-29-09.35.09-450x355.png" alt="" width="450" height="355" /></p>
+<p>[img id="1029" size="medium"][/img]</p>
 <p>这个插件能够自动的合并 CSS 和 JS，并对其压缩，非常<!--more-->的方便。而且一些主题会有大量的 inline CSS，当开启了合并 CSS 后，这些 inline CSS 会自动添加到文件中。</p>
 <p>我在这个插件中的一些配置，分享出来：</p>
 <h3>Exclude scripts from Autoptimize</h3>
@@ -61,10 +61,10 @@ tags:
 <li><strong>Inline all CSS</strong>：同上</li>
 </ul>
 <h2>Crayon Syntax Highlighter</h2>
-<p><img class="aligncenter size-medium wp-image-1030" src="https://cdn.tloxygen.com/sites/2/20160201140310/2016-01-29-09.55.25-450x259.png" alt="" width="450" height="259" /></p>
+<p>[img id="1030" size="medium"][/img]</p>
 <p>这个插件能够让 WordPress 上展示自动高亮的源代码，有多种主题可以选择，支持多种编程语言。</p>
 <h2>Slimpack</h2>
-<p><img class="aligncenter size-medium wp-image-1031" src="https://cdn.tloxygen.com/sites/2/20160201140314/2016-01-29-09.59.11-450x333.png" alt="" width="450" height="333" /></p>
+<p>[img id="1031" size="medium"][/img]</p>
 <p>这是 Jetpack 的简化版，没有 Jetpack 那一堆没用的特性，不需要登录到 wordpress.com，功能齐全，使用起来也非常简便。</p>
 <h2>XML Sitemap &amp; Google News feeds</h2>
 <p>这个插件能够自动生成网站的 <code>sitemap.xml</code> 和 <code>robots.txt</code>，你可以直接将 <code>sitemap.xml</code> 提交到百度和 Google，这样搜索引擎就不会漏掉你的网站上的每一篇文章了。</p>
@@ -72,7 +72,7 @@ tags:
 <h2>WP-Piwik</h2>
 <p>这个插件能够让你的整个网站拥有统计功能，支持 WordPress 的多站点，推荐在整个网络上启用。关于 Piwik 配合 WordPress，请参见这篇文章：<a href="https://ze3kr.com/2016/01/piwik-wordpress/">Piwik 与 WordPress 配合使用，建立强大统计系统</a>。</p>
 <h2>Blubrry PowerPress</h2>
-<p><img class="aligncenter size-medium wp-image-1032" src="https://cdn.tloxygen.com/sites/2/20160201140316/IMG_1301-253x450.png" alt="" width="253" height="450" /></p>
+<p>[img id="1032" size="medium"][/img]</p>
 <p>这个插件能够让你的 WordPress 生成一个 Podcast Feed，让你有一个播客平台，你也可以把这个 Feed 直接提交到 iTunes 等地方。</p>
 <h2>Add From Server</h2>
 <p>这个插件能够让你通过 FTP 方式上传媒体到主机，并通过它将这个媒体添加到媒体库。</p>

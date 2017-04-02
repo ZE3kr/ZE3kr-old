@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: WordPress 全站加速及国内外几家 CDN 测评
+title: 国内外几家 CDN 测评及网站全站加速
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -23,7 +23,7 @@ tags:
 - DNS
 - CDN
 ---
-<p>在我配置全站 CDN 加速之前，我只是加速了图片、视频、CSS 和 JS 之类的静态资源。现在，我的几个网站 HTML 页面本身（也就是根域名下）也进行了全球 CDN 的加速。本文重点讲述 WordPress 的全站缓存，国内外 CDN 混用的解决方案，以及让页面也在 CDN 上缓存的正确做法。</p>
+<p>配置全站 CDN 可以缓存 HTML 页面和加快页面首次加载所耗时间。本文重点讲述 WordPress 的全站缓存，国内外 CDN 混用的解决方案，以及让页面也在 CDN 上缓存的正确做法。</p>
 <p><!--more--></p>
 <h2>全站 CDN 能在哪些地方加速？</h2>
 <h3>我已经像你之前一样只缓存了图片、视频、CSS 和 JS 之类的静态资源，全站 CDN 有什么优点？</h3>
@@ -31,10 +31,11 @@ tags:
 <ol>
 <li><strong>SSL 卸载</strong>：源站到 CDN 之前走 HTTP 传输，CDN 到用户走 HTTPS 传输。这样，能减轻源站原本因为 SSL 所造成的硬件负担。然而，由于源站到 CDN 的传输是明文的，仅建议全程内网的情况，或线路可控的情况下使用，否则有很大的安全隐患。然而几乎所有的 CDN 也可以配置源站到 CDN 之间走 HTTPS 加密传输。</li>
 <li><strong>安全防护</strong>：所有的 CDN 都自带基于第一、二、三层网络的防护（防止 SYN 攻击），大多数还带了第七层的防护（防止 CC 攻击）。</li>
-<li><strong>缓存动态页面</strong>：所谓动态页面，其实大多数对于没有登录的用户来说内容其实是固定的（如 WordPress 的文章页），所以可以针对未登录的用户缓存。这需要 CDN 能自动根据 Cookie 判断用户有没有登录，这下就只剩 Cloudflare 企业版和 CloudFront 可以做到了。很明显企业版我用不起（$200/月），而且我的网站没有备案，也不会有中国节点加速。所以剩下的只有 CloudFront 的了。</li>
+<li><strong>减少延迟</strong>：建立 HTTP 连接之前需要先进行 TCP 和 HTTP 的 SSL 握手，这样会增加首次加载所需时间。而很多 CDN 都会与服务器进行预连接，而且 CDN 的服务器离用户较近，所以能减少首次加载所需时间，即使没有缓存页面。</li>
+<li><strong>缓存动态页面</strong>：所谓动态页面，其实大多数对于没有登录的用户来说内容其实是固定的（如 WordPress 的文章页），所以可以针对未登录的用户缓存。这需要 CDN 能自动根据 Cookie 判断用户有没有登录，这下就只剩 Cloudflare 企业版和 CloudFront 可以做到了。</li>
 </ol>
 <h2>使用 CloudFront 作为全站 CDN</h2>
-<p>CloudFront 有 Amazon 自建的网络，单价较高但是 0 元起步，适合中小客户。本站点从海外访问就是 CloudFront，欢迎测试！</p>
+<p>CloudFront 有 Amazon 自建的网络，单价较高但是 0 元起步，适合中小客户。<del>本站点从海外访问就是 CloudFront，欢迎测试！</del>（全站加速只是玩玩试一下，本站目前已经不再是全站加速）本文将重点介绍 CloudFront 和 WordPress 配合实现动静分离，缓存 HTML 页面。之后将对比其他的一些 CDN。</p>
 <ul>
 <li>国外速度：★★★★☆，节点数量众多，但相比 Cloudflare 要差一些，尤其是非洲地区，并且不支持 Anycast。</li>
 <li>国内速度：★★★☆☆，国内开始走亚洲节点，速度要比 Cloudflare 快</li>
@@ -44,6 +45,7 @@ tags:
 <li>动静分离：★★★★★，自动分离，一个服务下可以根据不同目录设置不同 Behaviors，甚至配置多个源站服务器，支持匹配 Cookie、GET、Header 规则缓存，支持禁用 POST 等提交方式</li>
 <li>缓存刷新：★★★★☆，支持单个 URL 刷新以及规则匹配刷新</li>
 <li>接入方式：NS/CNAME</li>
+<li>证书兼容性：默认仅限支持 SNI 的浏览器，可额外购买服务（$600/月）以兼容所有浏览器。</li>
 </ul>
 <p>CloudFront 作为全站 CDN 的特性：</p>
 <ul>
@@ -64,7 +66,7 @@ tags:
 <p>注意，创建后可能要等不到一小时才能被访问到。</p>
 <p>为了根域名和 CloudFront 配合使用，我还得换 Route 53 这个 DNS 解析。由于这是精度非常高的 GeoDNS，是需要将解析服务器向各大 DNS 缓存服务器去提交，让这些缓存服务器去针对你的 DNS 缓存服务器加入到启用 EDNS Client Subnet 的白名单中。还好 Route 53 是最流行的 GeoDNS 之一，所以如果你用它给的 NS 记录，而不去自定义，就不用操心这个了。在配置根域名时，直接选择 A 记录，然后开启 Alias，填写 CloudFront 域名就行。如果想要支持 IPv6，那就再建一个 AAAA 记录即可。这样的话如果你从外部解析，你会直接解析到 A 记录和 AAAA 记录，而不是 CNAME 了！</p>
 <p><img class="aligncenter size-medium wp-image-2577" src="https://cdn.tloxygen.com/sites/2/2017/01/FullSizeRender-10-450x327.jpg" alt="" width="450" height="327" /></p>
-<p>此时，CloudFront 就配置完了。现在 CloudFront 会自动缓存页面约一周的时间，所以需要配置文章更新时清理缓存。我写了一个插件，可以在有文章更新/主题修改/内核更新时清理所有缓存，新评论时清理文章页面，控制刷新频率为 10 分钟（由于 CloudFront 刷新缓存的速度是出奇的慢，而且刷新缓存只有前一千次免费）。欢迎<a href="https://wordpress.org/plugins/full-site-cache-cf/" target="_blank">使用我制作的插件</a>。</p>
+<p>此时，CloudFront 就配置完了。现在 CloudFront 会自动缓存页面约一周的时间，所以需要配置文章更新时清理缓存。我写了一个插件，可以在有文章更新/主题修改/内核更新时清理所有缓存，新评论时清理文章页面，控制刷新频率为 10 分钟（这是由于 CloudFront 刷新缓存的速度是出奇的慢，而且刷新缓存只有前一千次免费）。欢迎<a href="https://wordpress.org/plugins/full-site-cache-cf/" target="_blank">使用我制作的插件</a>。</p>
 <p>不过，CloudFront 在国内的访问速度还不如我之前用的 GCE，这可怎么办？没关系，Route 53 可以 GeoDNS，我把中国和台湾还是解析到了原本的 GCE 上，这样速度其实只提不减。注意，若要这样做，原本的服务器也要有有效证书（同理，你要是域名已经备案，则可以设置为国内的 CDN 的 IP，达到国内外 CDN 混用的效果）。CloudFront 会影响 Let's Encrypt 的签发，所以需要通过设置 Behaviors 和多个源站服务器，来继续实现 80 端口的文件认证。实际测试 Route 53 为中国解析的 IPv4 识别率为 100%，IPv6 的识别率欠佳。</p>
 <p><img class="aligncenter wp-image-2580 size-large" src="https://cdn.tloxygen.com/sites/2/2017/01/FullSizeRender-11-1600x497.jpg" width="525" height="163" /></p>
 <h3>实际使用情况</h3>
@@ -134,7 +136,7 @@ $ dig @8.8.8.8 +short ze3kr.com aaaa
 <li>缓存命中：★★☆☆☆，由于节点数量实在众多，于是在每一个地方都需要单独缓存，所以缓存命中率很低</li>
 <li>动静分离：★★★☆☆，自动分离，它遵守 Cache-Control 规则，也可以设置 <em>Page Rules</em> 修改默认缓存规则。但是，默认不缓存 HTML 页面、<em>Page Rules</em> 只有 3 个的限制、以及没有开放匹配 Cookie 规则的缓存。</li>
 <li>缓存刷新：★★☆☆☆，仅支持刷新某个页面的 URL 和刷新全部内容，不支持规则刷新</li>
-<li>接入方式：NS</li>
+<li>接入方式：NS（如果是 Partner 则可以有免费的 CNAME 接入）</li>
 <li>证书兼容性：仅限支持 SNI 的浏览器</li>
 </ul>
 <p>Cloudflare 作为全站 CDN 的特性：</p>
@@ -173,7 +175,7 @@ define( 'CLOUDFLARE_KEY', '03fac7b886ca92887466ea59f04636c1c9dbd' ); // API Key<
 <li>免费 SSL 证书</li>
 </ul>
 <h3>UPYUN</h3>
-<p>使用自己管理的机房，网络有些受限于中国的环境，单价业界最低。示例网站：<a href="https://www.tloxygen.com">tloxygen.com</a></p>
+<p>使用自己管理的机房，网络有些受限于中国的环境，单价业界最低。</p>
 <ul>
 <li>国外速度：★★☆☆☆，北美洲、欧洲、亚洲都有一定数量的节点，但速度欠佳。且 CNAME 接入所用的 NS 在国外没有节点，在解析速度上就牺牲很多。</li>
 <li>国内速度：★★★★★，国内节点很多，但是由于只能 CNAME 接入，需要多一次解析请求，花费时间</li>
@@ -225,7 +227,7 @@ define( 'UPYUN_KEY', 'password' ); // 操作员密码</pre>
 <p>有全球最密集的网络集群，最快的速度、较低的单价，主要提供负载均衡，SSL 卸载，当然还附带了 CDN。由于缓存命中率低，需要超大型访问量的网站才有效。正是因为这一点，Google 自己只是将用户量极大的搜索服务用上了这个 CDN 系统，其余的很多 CDN 用的是 Cloudflare 和 Fastly 的。Google 的网络和 Cloudflare 和 Fastly 的网络有内网链接。</p>
 <ul>
 <li>国外速度：★★★★★，由于拥有众多的海外节点并支持 Anycast，给满分。</li>
-<li>国内速度：★★★★☆，国内直连香港节点，几乎是速度最快的香港网络的，与国内几大运营商都有接入，但毕竟没有国内节点，比不过一些国内的速度。</li>
+<li>国内速度：★★★☆☆，国内直连香港节点，几乎是速度最快的香港网络的，与国内几大运营商都有接入，但毕竟没有国内节点，比不过一些国内的速度。（但是目前所分配到的一些 IP，联通会绕道至美西了）</li>
 <li>廉价指数：★★☆☆☆，由于占用了 IP 资源，每月需要花费 18 美元的固定价格，并还需要再为流量付费。流量的单价较低。</li>
 <li>方便接入：★☆☆☆☆，需要各种复杂的配置，但是一旦完成了配置，就同时有了负载均衡，弹性伸缩等等特性。</li>
 <li>缓存命中：★☆☆☆☆，节点太多了，小流量网站都很难遇到命中的情况。和 Cloudflare 一样可以利用跨区域负载均衡提高缓存命中率。</li>
@@ -250,14 +252,4 @@ define( 'UPYUN_KEY', 'password' ); // 操作员密码</pre>
 <li><strong>Site URL</strong>：https://wp.example.com</li>
 </ul>
 <p>然后，直接给 Home URL 上 CDN，在 CDN 或者源站上配置忽略 Cookie 信息。Site URL 回源，用作 WordPress 后台管理即可。</p>
-<p>我所有的网站现在都使用了这个方法，现在我的网站整个后台的内容分发分为 4 个部分，面向前端的有 3 个（为了提高速度，回源均采用了 HTTP，与浏览器的连接均采用了 HTTPS 和 HTTP/2）：</p>
-<ul>
-<li><strong>媒体文件</strong>（中央服务器 → 边缘节点），存储在了 UPYUN 对象存储和 Google Cloud Storage 上，国内外分别使用 UPYUN 和 Cloudflare 分发，节点如下图的边缘节点。国内杭州源站为 BGP 网络，国外台湾源站接入和上图一样，与 Cloudflare 有内网直连。上传后的文件直接持久缓存到杭州和台湾的对象存储服务器上，除非删除，否则不再修改。</li>
-<li><strong>CSS、JS、静态 HTML 部分</strong>（台湾服务器 → 中央缓存 → 边缘节点），存储在了 Google Compute Engine 上，接入和上图一样。使用 AWS CloudFront 和 UPYUN 进行分发，会先在<em>中央缓存</em>进行预缓存，然后再由边缘节点缓存，能提高缓存效率。源站与 AWS CloudFront 有内网直连。此外我为中国专门添加了一个北京<em>中央缓存</em>，北京的<em>中央缓存</em>也是 BGP 接入。这些文件会缓存一个月的时长，不去主动刷新缓存。</li>
-<li><strong>网站 HTML 主体</strong>（台湾服务器 → 中央缓存 → 边缘节点 <em>或</em> 直接台湾服务器）：和静态 HTML 类似，但由于没有备案，所以没有国内服务器。国内访问则直接连接位于台湾的源站，接入情况见<em>国内的网络接入</em>。网站 HTML 默认缓存一周的时长，如有更新会主动刷新缓存。</li>
-</ul>
-<p><img class="aligncenter size-large wp-image-2681" src="https://cdn.tloxygen.com/sites/2/2017/02/map2-1600x894.png" alt="" width="525" height="293" /></p>
-<ul>
-<li><strong>管理后台</strong>（直接台湾服务器），管理界面全部回源，直接在 Google Compute Engine 上使用 HTTPS 加密，与浏览器之间是全程加密。</li>
-</ul>
-<p>[modified github="ZE3kr/ZE3kr"]修复插件对评论状态影响的 Bug，添加关于插件的补充[/modified]</p>
+<p>[modified github="ZE3kr/ZE3kr"]本站已经不再是全站 CDN。修复插件对评论状态影响的 Bug，添加关于插件的补充[/modified]</p>

@@ -69,8 +69,7 @@ HTML;
 }
 </pre>
 <p>首先进入你的 GitHub 项目中的 Webhooks（Settings &gt; Webhooks &amp; Services &gt; Add webhook），然后填写内容。Secret可以不填写，为了方便起见只好用一种不安全的方式——加一个 GET 请求。Payload URL 里就填写刚才添加的 Openshift 程序的网址＋新创建的实现自动同步的文件目录＋GET 请求。</p>
-<p>[img size="medium" id="832"][/img]<br />
-<a href="https://cdn.tloxygen.com/sites/2/20160131134448/sync2.png" rel="attachment wp-att-832"><img src="https://cdn.tloxygen.com/sites/2/20160131134448/sync2-450x319.png" alt="sync2" width="450" height="319" class="aligncenter size-medium wp-image-832" /></a></p>
+<p>[img size="medium" id="832"][/img]</p>
 <p>等到下次 Push 后，进这里查看结果，查看是否成功。</p>
 <p>同样的，如果你想当 GitCafe 被 Push 后也同步到 GitHub，也只需要在 GitCafe 上配置好相同的 Webhooks。</p>
 <p>[img size="medium" id="831"][/img]</p>

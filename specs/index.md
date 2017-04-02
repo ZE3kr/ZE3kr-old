@@ -19,26 +19,15 @@ categories: []
 tags: []
 ---
 <p>使用 Google Cloud Platform（简称 GCP，下同）搭建，在云端，几乎完全静态化，主机位于台湾。主机使用 LNMP 配置，详情：<a href="https://ze3kr.com/2016/12/go-on-google-cloud/">全面迁移到 Google Cloud Platform</a>。</p>
-<p><img class="aligncenter size-large wp-image-2701" src="https://cdn.tloxygen.com/sites/2/2017/02/gcp4-1600x800.png" alt="" width="525" height="263" /></p>
-<p>&nbsp;</p>
 <h2>兼容性与先进技术</h2>
 <ul>
 <li>网站本身的 HTTPS 几乎支持所有的浏览器，CDN 资源需要 SNI 支持</li>
 <li>网站开启了 HSTS，并已进入各大浏览器的 Preload List，包括子域名</li>
 <li>网站域名可以在纯 IPv6 的递归解析服务器上解析到 IP 地址</li>
-<li>网站能够在纯 IPv6 情况下正常加载所有基本内容（Gravatar 除外）</li>
+<li><del>网站能够在纯 IPv6 情况下正常加载所有基本内容</del>（等待 Google Cloud 支持 IPv6 中）（Gravatar 除外）</li>
 <li>前端使用 WordPress 自带主题，最低能兼容到 Windows XP 的 IE6。</li>
 </ul>
-<h2>网络</h2>
-<h3>台湾源站服务器</h3>
-<h4>国内的网络接入</h4>
-<p>由于不是国内服务器，所以在中国大陆没有接入点。接入点为香港的运营商有中国电信、中国联通、中国移动、中国铁通；接入点为日本的有中国移动。</p>
-<h4>国外的网络接入</h4>
-<p>全球接入极好，此外，每一个接入点都有 DDOS 清洗功能。</p>
-<p><img class="aligncenter size-large wp-image-2544" src="https://cdn.tloxygen.com/sites/2/2016/01/map-1600x788.jpg" alt="" width="525" height="259" /></p>
-<h3>内容分发——CDN</h3>
-<p>详情：<a href="https://ze3kr.com/2017/01/wordpress-full-site-cdn/">WordPress 全站加速及国内外几家 CDN 测评</a></p>
-<p><img class="aligncenter size-large wp-image-2681" src="https://cdn.tloxygen.com/sites/2/2017/02/map2-1600x894.png" alt="" width="525" height="293" /></p>
+<h3></h3>
 <h2>视频参数</h2>
 <h3>视频格式</h3>
 <p>此网站使用自己的 CDN 加速视频，使用 MP4 格式，从 2016 年开始，所有的视频还将有 WEBM 格式，并且我还会逐渐的让以前的视频也支持 WEBM。</p>
