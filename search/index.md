@@ -19,6 +19,5 @@ categories: []
 tags: []
 ---
 <p>所有发布的文章都在这里</p>
-<p>
-<form role="search" method="get" class="search-form" action="https://ze3kr.com/search/"> <label> <span class="screen-reader-text">全文搜索：</span> </label> <input type="search" class="search-field" placeholder="全文搜索…" value="" name="s"> <button type="submit" class="search-submit"><svg class="icon icon-search" aria-hidden="true" role="img"> <use href="#icon-search" xlink:href="#icon-search"></use> </svg><span class="screen-reader-text">全文搜索</span></button></form></p>
+<form class="search-form" action="https://ze3kr.com/search/" method="get"><label> <span class="screen-reader-text">全文搜索：</span> </label> <input class="search-field" name="s" type="search" value="" placeholder="全文搜索…" /> <button class="search-submit" type="submit"><svg class="icon icon-search" aria-hidden="true" role="img"> <use href="#icon-search" xlink:href="#icon-search"></use> </svg></button></form>
 <p>[archive date=""]</p>

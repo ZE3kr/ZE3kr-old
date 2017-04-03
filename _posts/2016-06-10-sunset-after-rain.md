@@ -21,5 +21,5 @@ tags:
 - 广角
 - 晚霞
 ---
-<p>[img id="1721" exif="only"][/img]</p>
+<p>[img id="1721" size="large" exif="on"][/img]</p>
 <p>又是一张尺寸很大的<strong>全景图</strong>，原图 22M，暴雨过后的景色还是不错的。</p>

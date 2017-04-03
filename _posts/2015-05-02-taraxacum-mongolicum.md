@@ -20,5 +20,5 @@ categories:
 tags:
 - 花
 ---
-<p>[img id="859" exif="only"][/img]</p>
+<p>[img id="859" size="large" exif="on"][/img]</p>
 <p>挑战 iPhone 的背景虚化极限能力。</p>

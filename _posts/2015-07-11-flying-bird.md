@@ -20,12 +20,6 @@ categories:
 tags:
 - 鸟
 ---
-<ul>
-<li>相机：Canon EOS 7D Mark II</li>
-<li>光圈：f/6.3</li>
-<li>快门速度：1/2000</li>
-<li>感光度：ISO-800</li>
-<li>实际焦距：300mm</li>
-</ul>
+<p>[img id="879" size="large" exif="on"][/img]</p>
 <p>利用相机的每秒十张连拍的机械快门，抓拍住了正在抓飞虫的鸟。直到之后观察照片时才注意到了画面中竟然还有一只飞虫。</p>
 <p>[img id="878" size="large" exif="on"]紧接着上一张之后的连拍到的画面（间隔只有 0.1s）[/img]</p>

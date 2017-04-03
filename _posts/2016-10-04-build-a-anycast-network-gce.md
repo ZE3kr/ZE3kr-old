@@ -20,6 +20,7 @@ categories:
 tags:
 - 网络
 - VPS
+- Google Cloud Platform
 ---
 <p><a href="https://ze3kr.com/2016/10/asia-google-compute-engine/">在上一篇文章</a>中，我简单的介绍了 Google Compute Engine（简称 GCE）的基础使用。这篇文章我将介绍如何利用 GCE 建立一个 Anycast 网络，并测试了其速度。</p>
 <p>想要实现这个功能，就需要使用 <a href="https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example" target="_blank">Cross-Region Load Balancing</a>（跨地区的负载均衡），此功能就相当于一个 HTTP(S) 的反向代理，所以只能针对 HTTP/HTTPS 请求进行负载均衡。</p>

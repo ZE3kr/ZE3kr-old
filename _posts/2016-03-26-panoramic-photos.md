@@ -19,5 +19,5 @@ categories:
 - 广角
 tags: []
 ---
-<p>[img id="1454" exif="only"][/img]<br />
+<p>[img id="1454" size="large" exif="on"][/img]<br />
 [img id="1455" size="large" exif="on"][/img]</p>

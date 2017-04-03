@@ -21,12 +21,12 @@ tags:
 - 广角
 - 星空
 ---
-<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_540p.mp4" poster="https://cdn.tloxygen.com/sites/2/2017/02/2016.jpg" webm="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_540p.webm"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_540p.mp4" poster="https://cdn.tloxygen.com/sites/2/2017/04/new-1600x900.jpeg" webm="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_540p.webm"][/video]</p>
 <p>全新的视频，间隔拍摄素材取自 2016 年到 2017 年期间的 60 天连续的拍摄。所有片段均为 4K 录制，4K 版本可以<a href="https://www.youtube.com/watch?v=Amb6K1vZzvI" target="_blank">在 YouTube 上找到</a>。</p>
 <p><!--more--></p>
 <h2>特别版</h2>
 <p><a href="https://www.youtube.com/watch?v=NMXXbJW13mY" target="_blank">YouTube (4K)</a></p>
-<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_special_540p.mp4" poster="https://cdn.tloxygen.com/sites/2/2017/02/2016.jpg" webm="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_special_540p.webm"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_special_540p.mp4" poster="https://cdn.tloxygen.com/sites/2/2017/04/new-1600x900.jpeg" webm="https://cdn.tloxygen.com/uploads/2017/02/hello_2017_special_540p.webm"][/video]</p>
 <h2>间隔拍摄版</h2>
 <p><a href="https://www.youtube.com/watch?v=o8i5HhlQw9Q" target="_blank">YouTube (4K)</a></p>
 <h2>完整间隔拍摄</h2>

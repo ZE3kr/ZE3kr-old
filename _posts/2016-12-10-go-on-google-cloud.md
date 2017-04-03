@@ -22,6 +22,7 @@ tags:
 - WordPress
 - DNS
 - CDN
+- Google Cloud Platform
 ---
 <p>这一周，终于将这个网站<strong>全面迁移到 Google Cloud Platform</strong> 上了。WordPress 原站服务器从 OVH 迁移到了 Google Compute Engine（简称 GCE），对象存储从 Amazon S3 换到了 Google Cloud Storage。同时，原先自建的 DNS 也换到了 Google Cloud DNS。</p>
 <p><!--more--></p>
