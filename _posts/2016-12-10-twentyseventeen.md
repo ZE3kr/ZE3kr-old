@@ -44,3 +44,6 @@ html[lang="zh-CN"] textarea {<br />
 <p>.aboutheaderimage a { color: #888!important; }</p>
 <p>.site-title {text-transform: none;}</p>
 <p>.wp-video { width:100%!important; }</p>
+<p>.home .page-header {display: none;}</p>
+<p>figure.wp-caption { width:100%!important; }<br />
+.size-large { width:100%!important; }</p>
