@@ -28,7 +28,7 @@ tags: []
 <p>如果你想要手动申请，请在 “贵站 URL” 上填写贵站首页的链接，“贵站标题” 上填写贵站网站首页的标题，并在 “本站 URL” 上填写当前页面链接，即 `https://ze3kr.com/links/` 。</p>
 <h2>申请表格</h2>
 <p>请确保已经添加了链接后再申请，否则申请无法通过！</p>
-<form id="apply_form" action="https://ssl.ze3kr.com/wp-content/plugins/add-pingback-manually/add-pingback.php" method="post">
+<form id="apply_form" action="https://wp.ze3kr.com/wp-content/plugins/add-pingback-manually/add-pingback.php" method="post">
 <p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p>
 <p><label for="pingback-id">本站 URL <span class="required">*</span></label><input id="pingback-id" maxlength="200" name="pingback-id" required="required" size="30" type="url" value="" /></p>
 <p><label for="pingback-url">贵站 URL <span class="required">*</span></label><input id="pingback-url" maxlength="200" name="pingback-url" required="required" size="30" type="url" value="" /></p>

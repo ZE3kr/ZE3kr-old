@@ -19,7 +19,7 @@ categories: []
 tags: []
 ---
 <p>你可以在这个页面给本站写反馈，你写的反馈<strong>可能</strong>会被公开在这个页面上。</p>
-<form action="https://ssl.ze3kr.com:8843/wp-content/plugins/add-pingback-manually/add-pingback.php" method="post">
+<form action="https://wp.ze3kr.com/wp-content/plugins/add-pingback-manually/add-pingback.php" method="post">
 <p class="comment-notes"><span id="email-notes">可以匿名提交</span></p>
 <p class="comment-form-url"><label for="pingback-content">内容 <span class="required">*</span></label> <textarea id="pingback-content" cols="45" maxlength="65525" name="pingback-content" rows="3"></textarea></p>
 <p><label for="pingback-title">姓名</label> <input id="pingback-title" maxlength="100" name="pingback-title" size="30" type="text" value="" /></p>
