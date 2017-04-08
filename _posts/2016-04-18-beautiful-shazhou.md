@@ -20,7 +20,7 @@ categories:
 tags:
 - 青川
 ---
-<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/20160418074048/13.mp4" poster="https://cdn.tloxygen.com/sites/2/20160418091421/shazhou-video-1200x675.jpg" webm="https://cdn.tloxygen.com/sites/2/20160418074051/13.webm"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.landcement.com/sites/2/20160418074048/13.mp4" poster="https://cdn.landcement.com/sites/2/20160418091421/shazhou-video-1200x675.jpg" webm="https://cdn.landcement.com/sites/2/20160418074051/13.webm"][/video]</p>
 <p>关于沙州的视频，其实所有的片段都使用 4K 分辨率录制，一段时间后 4K 版本的将会发布在 YouTube 上。</p>
 <p><!--more--></p>
 <p>[img id="1586" size="large" exif="on"]白龙湖上的日出[/img]</p>

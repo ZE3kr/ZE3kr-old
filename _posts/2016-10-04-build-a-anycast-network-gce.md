@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: 利用 GCE 建立一个 Anycast 网络，超快的香港节点
+title: 利用 GCE 建立一个 Anycast 网络，超快的香港节点，Google Cloud CDN
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -27,7 +27,7 @@ tags:
 <p><!--more--></p>
 <h2>简要概述</h2>
 <p>GCE 上所实现的这个功能是基于第七层的网络代理，所以其拓扑图是这样的：</p>
-<p>用户 —> 边缘服务器 —> 实例</p>
+<p>用户 —&gt; 边缘服务器 —&gt; 实例</p>
 <ul>
 <li><strong>用户到边缘服务器之间的连接</strong>：使用 HTTP 或 HTTPS；如果是 HTTPS 连接，那么 TLS 加密过程是在边缘服务器上实现。</li>
 <li><strong>边缘服务器到实例的连接</strong>：使用 HTTP 或 HTTPS 连接，之前的网络是走的 Google 的专线。</li>
@@ -44,7 +44,6 @@ tags:
 <p>然后，需要给每个地区的实例<a href="https://console.cloud.google.com/compute/instanceGroups/add" target="_blank">建立一个实例组</a>：</p>
 <p>[img id="2001" size="medium"]实例组配置页面[/img]</p>
 <p style="padding-left: 30px;">需要注意的是，实例组配置页面中位置里的 “多地区（<span class="s1">Multi-zone</span>）” 是指同一个<strong>地区</strong>（Region）的不同<strong>可用区域</strong>（Zone），而不是多个不同的地区，所以这实际上是翻译的错误，应该叫做 “多可用区域” 才对。</p>
-<p style="padding-left: 30px;">
 <hr />
 <p style="padding-left: 30px;">刚接触云服务的人可能不理解可用区域的概念，可以参考 <a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/using-regions-availability-zones.html" target="_blank">AWS 的这篇文章</a>来理解。简单点说，地区这个概念就是指离得很远的地区（比如城市之间，如北京和上海），所有在北京的服务器都算北京地区，所有在上海的服务器都算上海地区。但是为了能达到更高的可用性，通常还会在同一个地区设立多个数据中心，也就是可用区域。这些可用区域虽在一个地区中，其之间的距离可能相隔几十甚至几百公里，但这些可用区域之间的距离和不同地区之间的距离相比起来要小得多，所以这些可用区域之间的网络延迟也很低。</p>
 <p style="padding-left: 30px;">设立多个可用区域的意义是：可以能加更高的可用性（主要是为了避免外界因素：比如说火灾等），虽然是异地分布，但是可用区域之间的距离并不远，所以网络延迟可以忽略。</p>
@@ -119,6 +118,17 @@ Age: 10</pre>
 <p>经过多次执行这个指令，会发现有一定几率 Age 字段消失，这可能是流量指到了同一个地区的不同可用区上。但总之，是缓存命中率不高，即使之前曾访问过了。</p>
 <p>[img id="2013" size="large"][/img]</p>
 <p>多次运行测试确保有缓存之后，发现速度似乎并没有太多明显的提升。能够明显的看出改善的是：巴黎和阿姆斯特丹的 TTFB 延迟从 200ms 减少到了 100ms，然而还是不尽人意。可能的原因是：Google 并没有将内容缓存到离访客最近的边缘节点上，而是别的节点上。</p>
+<h2>统计与日志</h2>
+<p>开启了 Load Balancing 后，就会自动在 Google Cloud Platform 下记录一些信息了。</p>
+<h3>实时流量查看</h3>
+<p>在网页后台的 Network，Load balancing，advanced menu 的 Backend service 下，可以查看实时的流量情况：</p>
+<p><img class="aligncenter wp-image-2981 size-large" src="https://ze3kr.com/wp-content/uploads/sites/2/2016/10/Screenshot-2017-04-08-上午9.36.21-1600x871.png" alt="" width="525" height="286" /></p>
+<p>图形还是很漂亮的</p>
+<h3>延迟日志</h3>
+<p>在网页后台的 Stackdriver，Trace 下，可以看到延迟日志：</p>
+<p><img class="aligncenter size-large wp-image-2982" src="https://ze3kr.com/wp-content/uploads/sites/2/2016/10/Screenshot-2017-04-08-上午11.01.20-1600x999.png" alt="" width="525" height="328" /></p>
+<p><img class="aligncenter size-large wp-image-2983" src="https://ze3kr.com/wp-content/uploads/sites/2/2016/10/Screenshot-2017-04-08-上午11.07.06-1600x1133.png" alt="" width="525" height="372" /></p>
+<p>这里的延迟包含了网络延迟和服务器响应延迟</p>
 <h2>总结</h2>
 <p>GCE 所能实现的 Anycast 功能，只能通过 HTTP 代理（第七层）的方式实现，所以只能代理 HTTP 请求，其他功能（如 DNS）无法实现。所以很多功能受限于负载均衡器的功能（比如证书和 HTTP2 都需要在负载均衡器上配置），然而由于 TLS 加解密过程是在边缘服务器上实现，而且其本身也带有 CDN 功能，所以会比单纯的 Anycast（比如基于 IP 层，或是 TCP/UDP 层）的更快一些。</p>
 <h2>对比</h2>

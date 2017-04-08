@@ -32,7 +32,7 @@ tags:
 <h3>关于共享核的实例的补充</h3>
 <p>f1-micro（0.6 GB）和 g1-small（1.7GB）这两个版本使用的是共享核心（其余配置都是独立核心），根据 Google 的说明，0.60GB 是 0.2 vCPU，1.70GB 是 0.5 vCPU。但是却支持 Bursting，也就是短时间内最高能使用到 1.0 vCPU。</p>
 <p>那么 1.0 vCPU 是多少呢？查 cpuinfo，是 Intel(R) Xeon(R) CPU @ 2.50GHz。也就是说这两个版本最高能占用到 2.5GHz。但是假如长时间占用，速度就会压缩到 0.5GHz 和 1.75 GHz。</p>
-<p><img class="aligncenter size-medium wp-image-2473" src="https://cdn.tloxygen.com/sites/2/2016/10/Screenshot-2017-01-27-09.51.13-450x159.png" alt="" width="450" height="159" /></p>
+<p><img class="aligncenter size-medium wp-image-2473" src="https://cdn.landcement.com/sites/2/2016/10/Screenshot-2017-01-27-09.51.13-450x159.png" alt="" width="450" height="159" /></p>
 <p>我的 f1-micro 装了监控软件，对比 GCE 给的 CPU 占用率（<span style="color: #4c00ff;">深蓝色</span>）和系统自己监控到的占用率（<span style="color: #008cff;">浅蓝色</span>），发现 GCE 图表上统计的 CPU 占用率正好是本地统计的 5 倍，也就是说如果本地看到的 CPU 占用是 20%，GCE 图表上显示的就正好是 100%，本地为 20~100%，GCE 图表上就是 100~500%，这时就算作 Bursting 了。</p>
 <p>和其他 VPS 对比，其他的 VPS 也几乎都是共享核心，但你却无从判断是否超售。比如有 10 个用户共用一个核心，如果那 10 个人都在不停的占用 CPU，那么你的 CPU 速度会低于单核的十分之一。而 Google 的共享核心，保证了一个最低的速度（0.2 vCPU 和 0.5 vCPU），就算其他用户用的再狠，也能给你保证一定的速度。</p>
 <h2>使用流程以及配置方法</h2>

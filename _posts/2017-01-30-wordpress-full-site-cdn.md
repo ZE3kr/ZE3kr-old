@@ -58,17 +58,17 @@ tags:
 </ul>
 <h3>使用方法</h3>
 <p>先去 <a href="https://console.aws.amazon.com/cloudfront/home" target="_blank">CloudFront 控制面板</a>，点击 “Create Distribution”，选择 “Web”，然后进行类似如下的配置。<strong>源站配置</strong>注意 Origin Domain Name 必须是完整域名，而且如果用了 HTTPS，那么那个域名下必须有配置有效证书。</p>
-<p><a href="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-28-21.51.24.png"><img class="aligncenter size-medium wp-image-2572" src="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-28-21.51.24-450x339.png" alt="" width="450" height="339" /></a></p>
+<p><a href="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-28-21.51.24.png"><img class="aligncenter size-medium wp-image-2572" src="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-28-21.51.24-450x339.png" alt="" width="450" height="339" /></a></p>
 <p><strong>缓存配置</strong>，我把 Host 加入了 Header 白名单，Cookie 要添加 <code>wordpress*</code> 和 <code>wp*</code> 到白名单。</p>
-<p><a href="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-28-22.19.54.png"><img class="aligncenter wp-image-2576" src="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-28-22.19.54-1272x1600.png" alt="" width="600" height="755" /></a></p>
+<p><a href="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-28-22.19.54.png"><img class="aligncenter wp-image-2576" src="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-28-22.19.54-1272x1600.png" alt="" width="600" height="755" /></a></p>
 <p>然后<strong>前端配置</strong>，证书点 “Request or Import a Certificate with ACM” 就能申请 Amazon 颁发的证书了。CNAMEs 下填写你的网站的域名。</p>
-<p><a href="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-28-21.52.59.png"><img class="aligncenter wp-image-2575" src="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-28-21.52.59-921x1600.png" alt="" width="600" height="1042" /></a></p>
+<p><a href="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-28-21.52.59.png"><img class="aligncenter wp-image-2575" src="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-28-21.52.59-921x1600.png" alt="" width="600" height="1042" /></a></p>
 <p>注意，创建后可能要等不到一小时才能被访问到。</p>
 <p>为了根域名和 CloudFront 配合使用，我还得换 Route 53 这个 DNS 解析。由于这是精度非常高的 GeoDNS，是需要将解析服务器向各大 DNS 缓存服务器去提交，让这些缓存服务器去针对你的 DNS 缓存服务器加入到启用 EDNS Client Subnet 的白名单中。还好 Route 53 是最流行的 GeoDNS 之一，所以如果你用它给的 NS 记录，而不去自定义，就不用操心这个了。在配置根域名时，直接选择 A 记录，然后开启 Alias，填写 CloudFront 域名就行。如果想要支持 IPv6，那就再建一个 AAAA 记录即可。这样的话如果你从外部解析，你会直接解析到 A 记录和 AAAA 记录，而不是 CNAME 了！</p>
-<p><img class="aligncenter wp-image-2577 size-medium" src="https://cdn.tloxygen.com/sites/2/2017/01/FullSizeRender-10-450x327.jpg" alt="" width="450" height="327" /></p>
+<p><img class="aligncenter wp-image-2577 size-medium" src="https://cdn.landcement.com/sites/2/2017/01/FullSizeRender-10-450x327.jpg" alt="" width="450" height="327" /></p>
 <p>此时，CloudFront 就配置完了。现在 CloudFront 会自动缓存页面约一周的时间，所以需要配置文章更新时清理缓存。我写了一个插件，可以在有文章更新/主题修改/内核更新时清理所有缓存，新评论时清理文章页面，控制刷新频率为 10 分钟（这是由于 CloudFront 刷新缓存的速度是出奇的慢，而且刷新缓存只有前一千次免费）。欢迎<a href="https://wordpress.org/plugins/full-site-cache-cf/" target="_blank">使用我制作的插件</a>。</p>
 <p>不过，CloudFront 在国内的访问速度还不如我之前用的 GCE，这可怎么办？没关系，Route 53 可以 GeoDNS，我把中国和台湾还是解析到了原本的 GCE 上，这样速度其实只提不减。注意，若要这样做，原本的服务器也要有有效证书（同理，你要是域名已经备案，则可以设置为国内的 CDN 的 IP，达到国内外 CDN 混用的效果）。CloudFront 会影响 Let's Encrypt 的签发，所以需要通过设置 Behaviors 和多个源站服务器，来继续实现 80 端口的文件认证。实际测试 Route 53 为中国解析的 IPv4 识别率为 100%，IPv6 的识别率欠佳。</p>
-<p><img class="aligncenter wp-image-2580 size-large" src="https://cdn.tloxygen.com/sites/2/2017/01/FullSizeRender-11-1600x497.jpg" width="525" height="163" /></p>
+<p><img class="aligncenter wp-image-2580 size-large" src="https://cdn.landcement.com/sites/2/2017/01/FullSizeRender-11-1600x497.jpg" width="525" height="163" /></p>
 <h3>实际使用情况</h3>
 <h4>GeoDNS 效果测试</h4>
 <p>国内解析情况：</p>
@@ -115,7 +115,7 @@ $ dig @8.8.8.8 +short ze3kr.com aaaa
 <h4>Amazon 的 SSL 证书</h4>
 <p>CloudFront 免费签发的 SSL 证书是<strong>多域名通配符证书</strong>（Wildcard SAN），并且主要名称是自定的，要比 Cloudflare 的共享证书高级。此类证书在 Cloudflare 上需要花费每月 10 美元。此类证书在市面上很难买到，而且价格取决于域名数量，在一年几千到几万不等。</p>
 <p>然而，这个证书只能在 AWS 的 CloudFront 和负载均衡器上使用。</p>
-<p><img class="aligncenter size-medium wp-image-2597" src="https://cdn.tloxygen.com/sites/2/2017/01/az-ssl-450x411.png" alt="" width="450" height="411" /></p>
+<p><img class="aligncenter size-medium wp-image-2597" src="https://cdn.landcement.com/sites/2/2017/01/az-ssl-450x411.png" alt="" width="450" height="411" /></p>
 <p>CloudFront 的证书链较长，会影响 TLS 时间，不过由于它同时也是 CDN，这样 TLS 时间几乎减少到了可以忽略不计的程度。主要还是因为 macOS 上还没有直接信任 Amazon Root CA，如果直接信任了，就用不着这样了。</p>
 <h2>其他 CDN 厂商对比</h2>
 <p>以下列出的所有提供商（或某一提供商的某些版本），均符合以下条件，如果不符合则单独列出：</p>
@@ -147,7 +147,7 @@ $ dig @8.8.8.8 +short ze3kr.com aaaa
 <li>免费 SSL 证书</li>
 </ul>
 <p>有一点不同的是，Cloudflare 签发的是共享证书，证书样式如下：</p>
-<p><img class="aligncenter size-medium wp-image-2615" src="https://cdn.tloxygen.com/sites/2/2017/01/Screenshot-2017-01-29-19.13.26-450x287.png" alt="" width="450" height="287" /></p>
+<p><img class="aligncenter size-medium wp-image-2615" src="https://cdn.landcement.com/sites/2/2017/01/Screenshot-2017-01-29-19.13.26-450x287.png" alt="" width="450" height="287" /></p>
 <p>我觉得 Cloudflare 签发共享证书有两个原因，一是历史遗留问题：Cloudflare 专业版的 SSL 证书服务是支持无 SNI 的客户端的，而为了支持无 SNI 的客户端，一个 IP 就只能配置一个证书，所以就使用了共享证书节约 IP 资源。而现在免费版也有了 SSL，虽然免费版使用了 SNI 技术，但是证书总不能比付费版本还要高级吧，于是还是使用了共享 SSL 证书；二是为了增加更多的增值服务，现在 Cloudflare 上可以购买 Dedicated SSL Certificates，实现独立的证书（如果是付费版本启用，不支持 SNI 的客户端仍然 Fall back 到共享证书，所以仍然兼容不支持 SNI 的设备）。</p>
 <p>&nbsp;</p>
 <h3>Cloudflare 企业版（百度云加速专业版）</h3>

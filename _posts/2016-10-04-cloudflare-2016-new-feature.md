@@ -33,7 +33,7 @@ tags: []
 <p>[img id="2030" size="medium"]可配置服务器的地区（两种方式一样）[/img]</p>
 <p>此外，Cloudflare 还自带了 Health Check 功能，可以当服务器宕机后能够自动更改回源。虽然通过 DNS 的方式也可以实现宕机后切换，但是 DNS 方式毕竟会收到缓存时长影响，若使用 CDN 切换，则可以实现秒级切换。</p>
 <p>我的一个 WordPress 站点 tlo.xyz 就使用了这个功能，默认是美国东部和亚洲东部跨区域负载均衡，两者有一者宕机自动切换。如果全部宕机，则 fallback 到 Google Cloud Storage 上的静态页面。你可以观察 https://tlo.xyz 上的 TLO-Hostname 的 Header 来判断是哪一个服务器做的响应。</p>
-<p><img class="aligncenter size-medium wp-image-2849" src="https://cdn.tloxygen.com/sites/2/2016/10/Screenshot-2017-03-18-下午7.05.53-450x247.png" alt="" width="450" height="247" /></p>
+<p><img class="aligncenter size-medium wp-image-2849" src="https://cdn.landcement.com/sites/2/2016/10/Screenshot-2017-03-18-下午7.05.53-450x247.png" alt="" width="450" height="247" /></p>
 <h3>通过 DNS 实现（GeoDNS + 权重）</h3>
 <p>使用此功能不需要开启它的 CDN 功能，故访客是直接连接源站的。同上一种方式也是配置一个 Group，只是不开启 CDN 功能，然后 Cloudflare 会只作为 DNS 服务器的功能。它会自动进行 GeoDNS，给访客返回最近的服务器的 IP 地址，同样也支持 Health Check 功能，当服务器宕机后会自动切换解析。</p>
 <p>不同于其他的 DNS 解析商，Cloudflare 真正做到了智能，只需要配置一个 Group 即可，剩下的 Cloudflare 会自动搞定，而不是去手动地选择哪一个地区解析到哪一个服务器。</p>

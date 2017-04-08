@@ -24,8 +24,8 @@ tags: []
 <h2>广告列表</h2>
 <h3><a href="https://domain.tloxygen.com/web-hosting/index.php?promo=ze3kr" target="_blank">香港虚拟主机</a></h3>
 <p>香港主机接入中国电信 CN2 网络，赠送 SSL 证书，支持 HTTPS，<b>速度超过国内主机</b>！</p>
-<p><a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank"><img style="max-width: 375px; width: 100%;" src="https://cdn.tloxygen.com/my-uploads/hk-large-2.png" /></a></p>
+<p><a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank"><img style="max-width: 375px; width: 100%;" src="https://cdn.landcement.com/my-uploads/hk-large-2.png" /></a></p>
 <p>注：优惠将在购物车结账时生效；优惠仅限首年。</p>
 <h3><a href="https://itunes.apple.com/subscribe?at=10lJIS" target="_blank">Apple Music</a></h3>
 <p>热爱音乐的方式，尽在一处。立刻享受 3 个月的免费试用！</p>
-<p><a href="https://itunes.apple.com/subscribe?at=10lJIS" target="_blank"><img src="https://cdn.tloxygen.com/my-uploads/applemusic_cn.jpeg" width="125" height="125" /></a></p>
+<p><a href="https://itunes.apple.com/subscribe?at=10lJIS" target="_blank"><img src="https://cdn.landcement.com/my-uploads/applemusic_cn.jpeg" width="125" height="125" /></a></p>

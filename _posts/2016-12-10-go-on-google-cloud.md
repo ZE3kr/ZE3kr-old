@@ -31,4 +31,5 @@ tags:
 <p><strong>Google Cloud DNS</strong> 是具备 Anycast、IPv6 和 DNSSEC (需要申请) 的，而且中国连接也不怎么绕道。但是需要注意的是，Google Cloud DNS 所给的四个 NS 中第一个在中国是被屏蔽了的，所以配置时将其删除即可。价格十分低廉：每个域名 @ $0.2/月，$0.40/百万个请求。<a href="https://cloud.google.com/dns/pricing" target="_blank">价格表</a></p>
 <p>至此，原本分布式的两个 VPS 改为了一个，管理起来终于方便多了，而且亚洲的访问速度反而是变快了。全部上云后灵活性以及稳定性有明显改善！</p>
 <p>注：WordPress 主题已经换成 2017 版新版主题。</p>
-<h4></h4>
+<p>2017 年 4 月更新：本站已经正式用上了 <a href="https://ze3kr.com/2016/10/build-a-anycast-network-gce/">Google Cloud CDN</a>，并同时使用了美国东部和亚洲的服务器，保证全球快速访问！</p>
+<p>[modified][/modified]</p>

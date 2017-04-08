@@ -31,7 +31,7 @@ html[lang^="zh-"] textarea {
 	font-family: "PingFang TC", "Helvetica Neue", Helvetica, STHeitiTC-Light, Arial, sans-serif;
 }</pre>
 <p>显示效果如下，字形错误明显的已用下划线标出：</p>
-<p><img class="aligncenter size-large wp-image-2284" src="https://cdn.tloxygen.com/sites/2/2016/12/Screenshot-2016-12-17-16.46.42-1600x688.png" alt="" width="700" height="301" /></p>
+<p><img class="aligncenter size-large wp-image-2284" src="https://cdn.landcement.com/sites/2/2016/12/Screenshot-2016-12-17-16.46.42-1600x688.png" alt="" width="700" height="301" /></p>
 <p>看来这是 WordPress 的 Bug，<a href="https://core.trac.wordpress.org/changeset/39942" target="_blank">已经提交并修复</a>。在官方修复前，可以在外观的 “自定义” 里面添加以下 CSS 解决此问题：</p>
 <pre class="lang:css decode:true">html[lang="zh-CN"] body,
 html[lang="zh-CN"] button,

@@ -33,7 +33,7 @@ tags:
 <h2>超长续航</h2>
 <p>续航时间长达 8 个月，使用标准纽扣电池。</p>
 <h2>视频</h2>
-<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/20160131140734/322645387_1-540p.mp4" poster="https://cdn.tloxygen.com/sites/2/20160131140507/502160820-1200x675.jpg"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.landcement.com/sites/2/20160131140734/322645387_1-540p.mp4" poster="https://cdn.landcement.com/sites/2/20160131140507/502160820-1200x675.jpg"][/video]</p>
 <h2>图片</h2>
 <p>[img id="841" size="medium"][/img]</p>
 <p>[img id="824" size="medium"][/img]</p>

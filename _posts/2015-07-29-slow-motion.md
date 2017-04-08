@@ -21,6 +21,6 @@ tags:
 - 慢动作
 - 鸟
 ---
-<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/20160131143236/8v2-540p.mp4" poster="https://cdn.tloxygen.com/sites/2/20160131141052/2015-07-29-1200x675.jpg" webm="https://cdn.tloxygen.com/sites/2/20160217154858/8v2-540p.webm"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.landcement.com/sites/2/20160131143236/8v2-540p.mp4" poster="https://cdn.landcement.com/sites/2/20160131141052/2015-07-29-1200x675.jpg" webm="https://cdn.landcement.com/sites/2/20160217154858/8v2-540p.webm"][/video]</p>
 <p>慢动作，主要使用 1080p@60FPS 录制。</p>
 <p>音乐来自 Welcome Wizard</p>

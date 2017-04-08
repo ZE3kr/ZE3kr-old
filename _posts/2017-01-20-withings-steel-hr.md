@@ -32,7 +32,7 @@ tags:
 <p><!--more--></p>
 <p>本人购买的是 40mm 版本，感觉上 40mm 版本的较漂亮，而且实际上 40mm 并不算大。这个手表使用了机械指针，默认的两个机械表盘分别能显示时间（精确到分钟）和步数。</p>
 <h2>视频</h2>
-<p>[video width="960" height="540" mp4="https://cdn.tloxygen.com/sites/2/2017/01/steel_hr_540p.mp4" poster="https://cdn.tloxygen.com/sites/2/2017/01/poster.jpeg"][/video]</p>
+<p>[video width="960" height="540" mp4="https://cdn.landcement.com/sites/2/2017/01/steel_hr_540p.mp4" poster="https://cdn.landcement.com/sites/2/2017/01/poster.jpeg"][/video]</p>
 <h2>实物图片</h2>
 <p>[img id="2399" size="large"]包装[/img]</p>
 <p>[img id="2396" size="medium"]正面[/img]</p>

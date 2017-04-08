@@ -47,7 +47,7 @@ tags:
 <p>它就定义了 <code>localhost</code> 域名对应 <code>127.0.0.1</code> 这个 IP（第二行是 IPv6 地址）。这样，当你从浏览器里访问这个域名，或者是在终端中执行 Ping 的时候，会自动的查询这个 <code>hosts</code> 文件，就从文件中得到了这个 IP 地址。此外，<code>hosts</code> 文件还可以控制其他域名所对应的 IP 地址，并可以 override 其在全球 DNS 或本地网络 DNS 中的值。但是，<code>hosts</code> 文件只能控制本地的域名解析。<code>hosts</code> 文件出现的时候，还没有 DNS，但它可以说是 DNS 的前身。</p>
 <p>如果需要在一个网络中，公用同一个 DNS，那么就需要使用 IP 数据包向某个服务器去获取 DNS 记录。</p>
 <p>在一个网络里（此处主要指本地的网络，比如家庭里一个路由器下连接的所有设备和这个路由器组成的网络），会有很多主机。在与这些主机通信的时候，使用域名会更加的方便。通常，连接到同一个路由器的设备会被设置到路由器自己的一个 DNS 服务器上。这样，解析域名就不仅可以从 hosts 去获取，还可以从这个服务器上去获取。从另一个 IP 上去获取 DNS 记录通过 DNS 查询，DNS 查询通常基于 UDP 或者 TCP 这种 IP 数据包，来实现远程的查询。我的个人电脑的网络配置如下，这是在我的电脑连接了路由器之后自动就设置上的：</p>
-<p><img class="aligncenter size-medium wp-image-2315" src="https://cdn.tloxygen.com/sites/2/2016/12/Screenshot-2016-12-24-09.52.12-450x265.png" alt="" width="450" height="265" /></p>
+<p><img class="aligncenter size-medium wp-image-2315" src="https://cdn.landcement.com/sites/2/2016/12/Screenshot-2016-12-24-09.52.12-450x265.png" alt="" width="450" height="265" /></p>
 <p>重点是在路由器和搜索域上。</p>
 <p>我的电脑的主机名（也是电脑名）设置的是 <code>ze3kr</code>，这个内容在连接路由器时也被路由器知道了，于是路由器就给我的主机分配了一个域名 <code>ze3kr.local</code>，<code>local</code> 这个一级域名专门供本地使用。在这个网络内所有主机通过访问 <code>ze3kr.local</code> 这个域名时，路由器（<code>10.0.1.1</code>）就会告知这个域名对应的 IP 地址，于是这些主机够获得到我的电脑的 IP 地址。至于搜索域的作用，其实是可以省去输入完整的域名，比如：</p>
 <pre class="lang:default decode:true">$ ping ze3kr
@@ -63,7 +63,7 @@ round-trip min/avg/max/stddev = 0.053/0.053/0.053/0.000 ms</pre>
 <p>在本地，先读取本地缓存查找记录，再读取 Hosts 文件，然后在搜索域中查找域名，最后再向路由器请求 DNS 记录。</p>
 <h2>全球 DNS</h2>
 <p>在全球 DNS 中，一个完整域名通常包含多级，比如 <code>example.com.</code> 就是个二级域名， <code>www.example.com.</code> 就是个三级域名。通常我们常见到的域名都是完整的域名。</p>
-<p><a href="https://cdn.tloxygen.com/sites/2/2016/12/dns4.png"><img class="aligncenter size-large wp-image-2341" src="https://cdn.tloxygen.com/sites/2/2016/12/dns4-1600x1174.png" alt="" width="700" height="514" /></a></p>
+<p><a href="https://cdn.landcement.com/sites/2/2016/12/dns4.png"><img class="aligncenter size-large wp-image-2341" src="https://cdn.landcement.com/sites/2/2016/12/dns4-1600x1174.png" alt="" width="700" height="514" /></a></p>
 <p>一级域名被分为以下三个部分：</p>
 <ol>
 <li><strong>普通域（gTLD）</strong>：通常是三个字节或三个字节以上的域名后缀，或者是 Unicode 字符的后缀。这些域名分配给机构管理。</li>
