@@ -100,9 +100,9 @@ Via: 1.1 google</pre>
 <p>当通过 Anycast IP 访问时，就可以看到 HTTP Header 中的 <code>Via: 1.1 google</code> 字段。</p>
 <h2>速度测试</h2>
 <h3>Ping 测试</h3>
-<p>Ping 测试发现速度很快，看来反代的操作是放在 Google 的边缘服务器上了。</p>
+<p>Ping 测试发现速度很快，看来反代的操作是放在 Google 的边缘服务器上了。<strong>速度堪比 Google 啊！</strong></p>
 <p>[img id="2010" size="large"][/img]</p>
-<p>中国的速度那更是一流的快，Google 有香港的边缘节点，所以基本上是直接走的香港节点，比原本的连接台湾可用区快不少。</p>
+<p>中国的速度那更是一流的快，Google 有香港的边缘节点，所以基本上是直接走的香港节点，比原本的连接台湾可用区快不少。（只有部分 IP 段是完全直连的）</p>
 <p>[img id="2011" size="large"][/img]</p>
 <h3>HTTP GET 测试</h3>
 <p>在开启 CDN 功能之前，负载均衡器是不会对任何内容缓存的，所以会发现 Connect 的速度很快，但是 TTFB 延迟还是有不少。</p>
@@ -118,6 +118,8 @@ Age: 10</pre>
 <p>经过多次执行这个指令，会发现有一定几率 Age 字段消失，这可能是流量指到了同一个地区的不同可用区上。但总之，是缓存命中率不高，即使之前曾访问过了。</p>
 <p>[img id="2013" size="large"][/img]</p>
 <p>多次运行测试确保有缓存之后，发现速度似乎并没有太多明显的提升。能够明显的看出改善的是：巴黎和阿姆斯特丹的 TTFB 延迟从 200ms 减少到了 100ms，然而还是不尽人意。可能的原因是：Google 并没有将内容缓存到离访客最近的边缘节点上，而是别的节点上。</p>
+<p><a href="https://cloud.google.com/cdn/docs/locations">CDN 缓存服务器的位置列表</a></p>
+<p><img class="aligncenter size-medium wp-image-2991" src="https://ze3kr.com/wp-content/uploads/sites/2/2016/10/Screenshot-2017-04-08-下午9.44.30-450x193.png" alt="" width="450" height="193" /></p>
 <h2>统计与日志</h2>
 <p>开启了 Load Balancing 后，就会自动在 Google Cloud Platform 下记录一些信息了。</p>
 <h3>实时流量查看</h3>
@@ -131,6 +133,9 @@ Age: 10</pre>
 <p>这里的延迟包含了网络延迟和服务器响应延迟</p>
 <h2>总结</h2>
 <p>GCE 所能实现的 Anycast 功能，只能通过 HTTP 代理（第七层）的方式实现，所以只能代理 HTTP 请求，其他功能（如 DNS）无法实现。所以很多功能受限于负载均衡器的功能（比如证书和 HTTP2 都需要在负载均衡器上配置），然而由于 TLS 加解密过程是在边缘服务器上实现，而且其本身也带有 CDN 功能，所以会比单纯的 Anycast（比如基于 IP 层，或是 TCP/UDP 层）的更快一些。</p>
+<p>本站目前使用了 Anycast，你可以试试速度。</p>
+<h3>价格</h3>
+<p>前五个 Rules <strong>$18/月</strong>，流量费用相比 GCE 不变，已经被缓存的内容的流量有一点优惠。</p>
 <h2>对比</h2>
 <h3>Cloudflare</h3>
 <p>通过使用 Cloudflare 所提供的服务也能实现 Anycast，也是基于第七层的，即将也能实现 Cross-Region Load Balancing 的功能。虽然它还不能根据主机的 CPU 占用率去调整权重（毕竟它拿不到这些数据），却有强大的 Page Rules 功能以及 WAF 功能。</p>
@@ -140,3 +145,4 @@ Age: 10</pre>
 <h3>BuyVM</h3>
 <p>BuyVM 是一家 VPS 提供商，却提供免费的 Anycast 功能，其 Anycast 功能是直接基于 IP 层的 Anycast，所以可以配置 HTTP 之外的各种服务。BuyVM 没有所谓的边缘服务器一说，只能有三个节点，Ping 的结果不像前两家那么快，而且 TLS 过程也是在原本的主机（这三个主机中里用户最近的一个）上进行，也会有一定延迟。</p>
 <p>BuyVM 并不提供任何亚洲的主机，所以中国的连接速度也没有比 Cloudflare 快多少，整个亚洲的速度也不是很快。</p>
+<p>[modified]增加了更多截图以及实际使用[/modified]</p>
