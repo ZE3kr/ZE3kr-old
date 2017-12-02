@@ -1,6 +1,0 @@
-pages:
-  stage: deploy
-  script: 
-  - sshpass -p $SSHPASS ssh tlo@localhost "cd $PWD; git push --force --mirror git@github.com:ZE3kr/ZE3kr.com.git ;"
-  only:
-  - master
