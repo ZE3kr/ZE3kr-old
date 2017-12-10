@@ -22,9 +22,9 @@ tags: []
 <h3>右侧广告</h3>
 <p>右侧所嵌入的广告均<strong>不基于</strong>您的兴趣推荐，并且<strong>没有将统计数据交给第三方</strong>。广告内容都经过管理员筛选，均为优质可靠的内容。本网站依赖广告来获取收益，欢迎点击链接购买内容。</p>
 <h2>广告列表</h2>
-<h3><a href="https://domain.tloxygen.com/web-hosting/index.php?promo=ze3kr" target="_blank" rel="noopener noreferrer">香港虚拟主机</a></h3>
+<h3><a href="https://domain.tloxygen.com/web-hosting/index.php?promo=2018" target="_blank">香港虚拟主机</a></h3>
 <p>香港主机接入中国电信 CN2 网络，赠送 SSL 证书，支持 HTTPS，<b>速度超过国内主机</b>！</p>
-<p><a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank" rel="noopener noreferrer"><img style="max-width: 375px; width: 100%;" src="https://cdn.landcement.com/sites/2/2017/04/hk-3.png" srcset="https://cdn.landcement.com/sites/2/2017/04/hk-3-2x.png 2x" /></a></p>
+<p><a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank" rel="noopener noreferrer"><img style="max-width: 375px; width: 100%;" src="https://uploads-cdn.landcement.com/pro/ze3kr/2017/12/dfe106c0fea048165d97fc4d8604c3f4.png" /></a></p>
 <p>注：优惠将在购物车结账时生效；优惠仅限首年。</p>
 <h3><a href="https://itunes.apple.com/subscribe?at=10lJIS" target="_blank" rel="noopener noreferrer">Apple Music</a></h3>
 <p>热爱音乐的方式，尽在一处。立刻享受 3 个月的免费试用！</p>
