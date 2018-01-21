@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: Cloudflare Argo 测试，CDN 加速的黑科技
+title: Cloudflare Argo 与 Railgun 对比测试，CDN 加速的黑科技
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -21,8 +21,9 @@ tags:
 - 网络
 - CDN
 ---
-<p>本网站曾经一直将国外解析到 CloudFront 实现为国外加速，最近看到 Cloudflare 支持了 <a href="https://blog.cloudflare.com/argo/">Argo</a> 这一新功能，于是就把国外的 CDN 从 CloudFront 换到了 Cloudflare 并开启了 Argo 来试一下效果，官方宣称无缓存时能明显降低 TTFB（首字节延迟），有缓存时也能提高缓存命中率。<br />
+<p>本网站曾经一直将国外解析到 CloudFront 实现为国外加速，最近看到 Cloudflare 支持了 <a href="https://blog.cloudflare.com/argo/">Argo</a> 这一新功能，于是就把国外的 CDN 从 CloudFront 换到了 Cloudflare 并开启了 Argo 来试一下效果，官方宣称无缓存时能明显降低 TTFB（首字节延迟），有缓存时也能提高缓存命中率。本文还会将其与 Cloudflare 的另一个企业级的 CDN 加速黑科技——Railgun 进行对比。<br />
 <!--more--></p>
+<h1>Cloudflare Argo</h1>
 <h2>提升缓存命中率，Argo Tiered Cache</h2>
 <p>Cloudflare 的节点很多，但是节点太多有时不是一件好事——<strong>大多数 CDN 之间的节点是相对独立的</strong>。首先要先明白 CDN 的工作原理，CDN 通常不会预先缓存内容，而是在访客访问时充当代理的同时对可缓存的内容缓存。就拿本站来说，本站用的是<a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank">香港虚拟主机</a>，如果有英国伦敦的访客访问了我的网站，那么由于我的网站是可被缓存的，他就会连接到伦敦的节点并被缓存在这个节点。那么如果是英国曼彻斯特的访客访问了呢？由于 CDN 在曼彻斯特另有节点，访客会直接连接到曼彻斯特节点，然而曼彻斯特上并没有缓存，所以该节点会回源到香港。而显然的是，如果曼彻斯特回源到伦敦，使用伦敦的缓存会更快。</p>
 <p>综上，如果能选择性的从其他节点上获取资源，TTFB 会更低，缓存命中率也会相应提高。但是一般的 CDN 不会去这样做，因为节点相互独立，节点之间并不知道对方是否已经缓存。一般的解决方法是节点与源站之间先经过为数不多的几个节点，这几个节点可能只是分布在几个州，比如整个欧洲就只有一个这种节点。这样的话，伦敦的访客访问后，同时也被欧洲的那个节点缓存。这样，当再有欧洲其他地区的访客连接到一个没有缓存的节点时，这些节点会直接提供欧洲的那个节点的缓存。CloudFront 和 KeyCDN 就利用了这样的技术。</p>
@@ -40,7 +41,13 @@ tags:
 <p>[img id="3114" size="large"]没有启用 Argo 并且是 Full SSL[/img]</p>
 <p>[img id="3113" size="large"]启用了 Argo 并且是 Full SSL[/img]</p>
 <p>速度的确有一定的提升，但是不是特别明显，而且似乎开启了之后一些节点反而更不稳定——原本都是比较稳定的一个速度，开了这个之后一些节点反而忽快忽慢。看来提速的最佳方法还是半程加密。</p>
-<h2>总结</h2>
+<h1>Cloudflare Railgun</h1>
+<p>Railgun 是 Cloudflare 专门为 Business 和 Enterprise 企业级客户提供的终极加速方案。要使用它，先需要升级网站套餐为 Business 或 Enterprise，然后还需要在服务器上安装必要软件并在 Cloudflare 上完成配置。这相当于是一个双边加速的软件。其实现原理是让服务器与 Cloudflare 建立一个长久的 TCP 加密连接，使用 Railgun 独有协议而不是 HTTP 协议，这样显然能减少连接延迟。此外，它还会对动态页面缓存：考虑到大多动态页面都包含了大量相同的 HTML 信息，在用户请求一个新的页面时，服务器将只发送那些变化了的内容。这相当于一种多次的 Gzip 压缩。</p>
+<p><img class="aligncenter size-large wp-image-3376" src="https://cdn.landcement.com/sites/2/2017/05/Screenshot-2018-01-20-17.01.48-1600x557.png" alt="" width="525" height="183" /></p>
+<p>官方宣称，使用 Railgun 能够实现 99.6% 的压缩率，并实现两倍的速度。实际体验也确实如此：</p>
+<p>[img id="3373" size="large"]启用了 Railgun 并且是 Full SSL[/img]</p>
+<p>一些节点的速度不如 Argo 主要是因为这个香港服务器的国际网络接入不是特别好。如果你用 Google Cloud Platform，那网络肯定就会超级棒了。</p>
+<h1>总结</h1>
 <p>我在<a href="https://guozeyu.com/2017/01/wordpress-full-site-cdn/">国内外几家全站 CDN 对比</a>中测试 Google Cloud CDN 时，其极低的 TTFB 令我惊讶，仔细研究后发现节点是真的与主机之间建立长连接，而且会保持很长一段时间。而且 Google Cloud CDN 使用的是 Google 的网络，自认为要比 Cloudflare 的好很多。所以目前服务动态内容最快的应该还属 Google Cloud CDN 了。CloudFront 自带的 Regional Edge Caches 在缓存静态内容和提高缓存命中率上要比 Argo Tiered Cache 好，但是 Argo Smart Routing 在服务于动态的不可缓存的内容上更显出优势。</p>
 <p>Argo 并没有想象中的那么好用，而且 $5/mo 的起步价和 $0.10/GB 的流量并不便宜。当然也有可能需要一段时间 Argo 去分析线路延迟才能更好的进行优化。本文预计将在一个月后补充更新。</p>
 <h2>关于本站的分区解析</h2>
