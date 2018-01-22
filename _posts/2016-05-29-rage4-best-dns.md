@@ -23,7 +23,9 @@ tags:
 - DNS
 ---
 <p>DNS（<a href="https://zh.wikipedia.org/wiki/域名系统" target="_blank">域名系统</a>）是因特网的一项服务。它能够将域名指向一个 IP（服务器），这样你就可以通过域名来访问一个网站。能够通过域名访问的网站，都需要一个 DNS 服务器。这里指的是给站长的域名使用的权威 DNS 而并非缓存 DNS。</p>
-<p>本文包括 CloudXNS、Route 53、Cloudflare、Google Cloud DNS 以及 Rage4 的全面对比<!--more--></p>
+<p>本文包括 CloudXNS、Route 53、Cloudflare、Google Cloud DNS 以及 Rage4 的全面对比</p>
+<blockquote><p>注意⚠️：此页面已经过时，请<a href="https://wiki.tloxygen.com/DNS_%E6%8F%90%E4%BE%9B%E5%95%86" target="_blank">查看最新的对应页面</a></p></blockquote>
+<p><!--more--></p>
 <h2>CloudXNS</h2>
 <p>国内免费 DNS 中最好用的，作为 DNS 服务来说其功能也算齐全。CloudXNS 的服务器国内有不少，但没有使用 Anycast 技术，所以谈任何国外的服务器都是白搭。</p>
 <p style="text-align: left; padding-left: 30px;">CloudXNS 通过 GeoDNS 对其 NS 服务器的域名进行分区解析，国内的解析到国内服务器，国外的解析到国外服务器。然而其根域名的 Glue Record 中的四个仍是国内的四个服务器，实际解析中会优先使用 Glue Record，所以并不会用上任何国外的服务器。</p>

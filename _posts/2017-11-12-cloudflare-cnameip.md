@@ -37,6 +37,7 @@ tags: []
 <li>NS 接入更改为 CNAME/IP 接入只能保留前 100 项 DNS 记录。</li>
 <li>添加 CNAME/IP 接入的域名可能需要验证你的域名所有权，你需要在子域名上添加一个 TXT 记录。</li>
 </ul>
+<h2><a href="https://wiki.tloxygen.com/CloudFlare_接入/教程" target="_blank">使用教程</a></h2>
 <h2>界面截图</h2>
 <p><img class="aligncenter size-large wp-image-3261" src="https://cdn.landcement.com/sites/2/2017/11/Screenshot-2017-11-12-07.39.14-1089x1600.png" alt="" width="525" height="771" /></p>
 <p>另外，<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">TlOxygen 主机</a>正在六折促销，欢迎<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">抢购</a>，优惠将在购物车中自动生效。</p>

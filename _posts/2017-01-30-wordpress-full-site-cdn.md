@@ -24,6 +24,7 @@ tags:
 - CDN
 ---
 <p style="text-align: left;">配置全站 CDN 可以缓存 HTML 页面和加快页面首次加载所耗时间。本文重点讲述 WordPress 的全站缓存，国内外 CDN 混用的解决方案，以及让页面也在 CDN 上缓存的正确做法。本文主要介绍 CloudFront，同时也对 Cloudflare、又拍云、百度云加速、KeyCDN、Google Cloud CDN 这几家 CDN 进行对比。</p>
+<blockquote><p>注意⚠️：此页面已经过时，请<a href="https://wiki.tloxygen.com/CDN_%E6%8F%90%E4%BE%9B%E5%95%86" target="_blank">查看最新的对应页面</a></p></blockquote>
 <p><!--more--></p>
 <h2>全站 CDN 能在哪些地方加速？</h2>
 <h3>我已经像你之前一样只缓存了图片、视频、CSS 和 JS 之类的静态资源，全站 CDN 有什么优点？</h3>
