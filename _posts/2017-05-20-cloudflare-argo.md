@@ -42,14 +42,20 @@ tags:
 <p>[img id="3113" size="large"]启用了 Argo 并且是 Full SSL[/img]</p>
 <p>速度的确有一定的提升，但是不是特别明显，而且似乎开启了之后一些节点反而更不稳定——原本都是比较稳定的一个速度，开了这个之后一些节点反而忽快忽慢。看来提速的最佳方法还是半程加密。</p>
 <h1>Cloudflare Railgun</h1>
-<p>Railgun 是 Cloudflare 专门为 Business 和 Enterprise 企业级客户提供的终极加速方案。要使用它，先需要升级网站套餐为 Business 或 Enterprise，然后还需要在服务器上安装必要软件并在 Cloudflare 上完成配置。这相当于是一个双边加速的软件。其实现原理是让服务器与 Cloudflare 建立一个长久的 TCP 加密连接，使用 Railgun 独有协议而不是 HTTP 协议，这样显然能减少连接延迟。此外，它还会对动态页面缓存：考虑到大多动态页面都包含了大量相同的 HTML 信息，在用户请求一个新的页面时，服务器将只发送那些变化了的内容。这相当于一种多次的 Gzip 压缩。</p>
-<p><img class="aligncenter size-large wp-image-3376" src="https://cdn.landcement.com/sites/2/2017/05/Screenshot-2018-01-20-17.01.48-1600x557.png" alt="" width="525" height="183" /></p>
+<p>Railgun 是 Cloudflare 专门为 Business 和 Enterprise 企业级客户提供的终极加速方案。要使用它，先需要升级网站套餐为 Business 或 Enterprise，然后还需要在服务器上安装必要软件并在 Cloudflare 上完成配置。我直接使用了 <a href="https://guozeyu.com/2017/11/cloudflare-cnameip/">TlOxygen 提供的 Cloudflare 接入</a>，实现了<i><b>低价</b></i><strong>使用 Railgun</strong> 并且免服务器安装（此功能仍在内测中，请先在 <a href="https://cf.tlo.xyz/" target="_blank">cf.tlo.xyz</a> 上升级为 CNAME 高级接入，然后在本文评论以申请免费内测，同时请留下你的域名。正式上线后将支持 NS 接入）。这相当于是一个双边加速的软件，其实现原理是让服务器与 Cloudflare 建立一个长久的 TCP 加密连接，使用 Railgun 独有协议而不是 HTTP 协议，这样显然能减少连接延迟。此外，它还会对动态页面缓存：考虑到大多动态页面都包含了大量相同的 HTML 信息，在用户请求一个新的页面时，服务器将只发送那些变化了的内容。这相当于一种多次的 Gzip 压缩。</p>
+<p>[img id="3390" size="large"][/img]</p>
 <p>官方宣称，使用 Railgun 能够实现 99.6% 的压缩率，并实现两倍的速度。实际体验也确实如此：</p>
-<p>[img id="3373" size="large"]启用了 Railgun 并且是 Full SSL[/img]</p>
-<p>一些节点的速度不如 Argo 主要是因为这个香港服务器的国际网络接入不是特别好。如果你用 Google Cloud Platform，那网络肯定就会超级棒了。</p>
+<p>[img id="3383" size="large"]启用了 Railgun 并且是 Full SSL[/img]</p>
+<p>Railgun 的加速效果还是非常之明显的，明显强于 Argo。</p>
 <h1>总结</h1>
-<p>我在<a href="https://guozeyu.com/2017/01/wordpress-full-site-cdn/">国内外几家全站 CDN 对比</a>中测试 Google Cloud CDN 时，其极低的 TTFB 令我惊讶，仔细研究后发现节点是真的与主机之间建立长连接，而且会保持很长一段时间。而且 Google Cloud CDN 使用的是 Google 的网络，自认为要比 Cloudflare 的好很多。所以目前服务动态内容最快的应该还属 Google Cloud CDN 了。CloudFront 自带的 Regional Edge Caches 在缓存静态内容和提高缓存命中率上要比 Argo Tiered Cache 好，但是 Argo Smart Routing 在服务于动态的不可缓存的内容上更显出优势。</p>
-<p>Argo 并没有想象中的那么好用，而且 $5/mo 的起步价和 $0.10/GB 的流量并不便宜。当然也有可能需要一段时间 Argo 去分析线路延迟才能更好的进行优化。本文预计将在一个月后补充更新。</p>
+<p>Argo 并没有想象中的那么好用，而且 <b>$5/mo</b> 的起步价和 <b>$0.10/GB</b> 的流量并不便宜。当然也有可能需要一段时间 Argo 去分析线路延迟才能更好的进行优化。本文预计将在一个月后补充更新。</p>
+<p>Railgun 效果还是极其显著的，且 <a href="https://guozeyu.com/2017/11/cloudflare-cnameip/">TlOxygen <i>即将推出</i>的 Railgun</a> 对于 Cloudflare 的免费版，前 3 个域名一共 <b>$5/mo</b>，之后每个域名额外 <b>$1/mo。</b>（此功能仍在内测中，请先在 <a href="https://cf.tlo.xyz/" target="_blank">cf.tlo.xyz</a> 上将域名升级为 CNAME 高级接入，然后在本文评论以申请免费内测，同时请留下你的域名。正式上线后将支持 NS 接入）</p>
+<h2>动态内容</h2>
+<p><b>延迟</b>：Google Cloud CDN 延迟最低，Cloudflare Railgun 仅次。</p>
+<p><b>流量</b>：对于普通的动态 CMS，Cloudflare Railgun 大约能节省 10 倍以上流量，Google Cloud CDN 是做不到的。</p>
+<p>我在<a href="https://guozeyu.com/2017/01/wordpress-full-site-cdn/">国内外几家全站 CDN 对比</a>中测试 Google Cloud CDN 时，其极低的 TTFB 令我惊讶，仔细研究后发现节点是与主机之间建立长连接，而且会保持很长一段时间，此外所有网络都走 Google 内网，本质上与 Argo 和 Railgun 类似。所以目前服务动态内容最快的应该还属 Google Cloud CDN 了，Railgun 基本与之相当。</p>
+<h2>静态内容</h2>
+<p>CloudFront 自带的 Regional Edge Caches 在<b>缓存静态内容</b>和<b>提高缓存命中率</b>上要比 Argo Tiered Cache 和 Railgun 好，但是 Argo Smart Routing 在服务于动态的不可缓存的内容上更显出优势。Railgun 和 Google Cloud CDN 除了会在边缘节点缓存之外没有其他专门的优化。</p>
 <h2>关于本站的分区解析</h2>
 <p>本站的解析没有使用 Cloudflare 而是 自建的 DNS，因为我的 Cloudflare 域名是通过 CNAME 接入的。Cloudflare 分配的 IP 在很长时间内都不会变动，所以我直接把其 IP 设置为了海外线路。使用自建的DNS是为了在备案后，为国内分区解析配置 CDN 线路。</p>
 <p>PS: 大家应该都知道启用这个功能后并不会提升国内连接 Cloudflare 的速度，如果想要用 Cloudflare 并且希望国内快一点，源站最好就用美国西岸的。</p>

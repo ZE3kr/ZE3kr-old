@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: 推出 Cloudflare CNAME/IP 接入模式
+title: 推出 Cloudflare CNAME/IP 接入模式以及 Railgun 免费内测！
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -29,8 +29,9 @@ tags: []
 <li>SSL 记录验证与配置</li>
 <li>提供 IP 地址接入，每个子域名提供 CNAME 记录接入</li>
 <li>也可以使用 NS 方式接入，并可以设置 DNSSEC</li>
+<li><a href="https://guozeyu.com/2017/05/cloudflare-argo/#Cloudflare_Railgun">支持 Railgun</a>，与原站建立长链接，为动态页面提升约 7 倍速度！（此功能仍在内测中，请先将域名升级为 CNAME 高级接入，然后在本文评论以申请免费内测，同时请留下你的域名。正式上线后将支持 NS 接入。正式上线后，对于 Cloudflare 的免费版，前 3 个域名一共 <b>$5/mo</b>，之后每个域名额外 <b>$1/mo</b>。）</li>
 </ul>
-<p>立即前往 <a href="https://cloudflare.tlo.xyz">cloudflare.tlo.xyz</a></p>
+<p>立即前往 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a></p>
 <h2>注意事项</h2>
 <ul>
 <li>CNAME/IP 接入的域名将无法在 Cloudflare.com 上管理 DNS。你可以在这个网站上管理 DNS，或者使用 API 管理 DNS。你仍需要在 Cloudflare.com 上管理域名其他部分的设置。</li>
