@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: 推出 Cloudflare CNAME/IP 接入模式以及 Railgun 免费内测！
+title: Cloudflare 免费 CNAME/IP 接入，为你的海外访客加速！
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -19,6 +19,11 @@ categories:
 - 未归类
 tags: []
 ---
+<blockquote>原标题：推出 Cloudflare CNAME/IP 接入模式以及 Railgun 免费内测！</p></blockquote>
+<p>立即前往面板，地址 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 。通过使用该服务，你可以免费获得海外 CDN（通过分区解析可以单独为海外访客启用）。海外 CDN 服务不仅支持 CNAME 接入，还提供 Anycast IP 接入，意味着根域名也可以正常使用，不影响邮件接收（即不与 MX 记录冲突）。</p>
+<h2><a href="https://wiki.tloxygen.com/CloudFlare_接入/教程" target="_blank">使用教程</a></h2>
+<p>上方链接的教程以使用 CloudXNS 作为 DNS 的域名为例。</p>
+<h2>介绍</h2>
 <p>Cloudflare 是国外 CDN 厂商。默认免费版只能进行 NS 记录，这意味着还需要更改域名的 NS，实在是麻烦。然而 CNAME 接入方式只支持 <strong>200 美元/月</strong>以上的 <strong>Business 或 Enterprise plan</strong>，这对于很多人来说都太贵了。而作为 Cloudflare 的 Partner，却一直可以免费的创建 CNAME 接入的域名。我最近利用我的 Cloudflare Partner 账户做了个图形化 CNAME/IP 接入网站。地址 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 。<!--more--></p>
 <h2><span style="font-size: 1.25rem;">特性</span></h2>
 <ul>
