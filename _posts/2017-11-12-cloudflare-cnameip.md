@@ -20,7 +20,7 @@ categories:
 tags: []
 ---
 <blockquote>原标题：推出 Cloudflare CNAME/IP 接入模式以及 Railgun 免费内测！</p></blockquote>
-<p>立即前往面板，地址 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 。通过使用该服务，你可以免费获得海外 CDN（通过分区解析可以单独为海外访客启用）。海外 CDN 服务不仅支持 CNAME 接入，还提供 Anycast IP 接入，意味着根域名也可以正常使用，不影响邮件接收（即不与 MX 记录冲突）。</p>
+<p>立即前往面板，地址 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 。通过使用该服务，你可以免费获得海外 CDN（通过分区解析可以单独为海外访客启用）。支持 HTTPS 和 IPv6（再也不用担心 App Store 审核被拒）。海外 CDN 服务不仅支持 CNAME 接入，还提供 Anycast IP 接入，意味着根域名也可以正常使用，不影响邮件接收（即不与 MX 记录冲突）。</p>
 <h2><a href="https://wiki.tloxygen.com/CloudFlare_接入/教程" target="_blank">使用教程</a></h2>
 <p>上方链接的教程以使用 CloudXNS 作为 DNS 的域名为例。</p>
 <h2>介绍</h2>

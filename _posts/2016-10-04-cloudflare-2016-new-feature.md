@@ -27,6 +27,7 @@ tags:
 </ul>
 <p>Load Balancing 支持更加高级的负载均衡功能，并终于支持了大家很需要的跨区域负载均衡功能；Rate Limiting 支持了高级的访问次数限制功能。越来越多的原本需要在服务器上配置的功能，现在在 Cloudflare 上也能进行配置了。（目前这两个功能还属于 Beta 阶段，需要认证用户才能使用）</p>
 <p><!--more--></p>
+<blockquote><p>使用代理商 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 接入域名到 Cloudflare，可以实现 CNAME/IP 接入，还支持 Railgun。</p></blockquote>
 <h2>Load Balancing</h2>
 <p>此功能可以把 Cloudflare 当作负载均衡器使用，而不需要再在主机提供商上配置负载均衡，<a href="https://www.cloudflare.com/load-balancing/">官网介绍</a>。目前此功能仅向 Enterprise 账户和部分有资格的用户开放。该功能有两种实现方式，分别如下：</p>
 <h3>通过 Cloudflare 的 CDN 实现（Anycast）</h3>

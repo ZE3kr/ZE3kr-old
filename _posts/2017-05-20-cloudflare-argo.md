@@ -23,6 +23,7 @@ tags:
 ---
 <p>本网站曾经一直将国外解析到 CloudFront 实现为国外加速，最近看到 Cloudflare 支持了 <a href="https://blog.cloudflare.com/argo/">Argo</a> 这一新功能，于是就把国外的 CDN 从 CloudFront 换到了 Cloudflare 并开启了 Argo 来试一下效果，官方宣称无缓存时能明显降低 TTFB（首字节延迟），有缓存时也能提高缓存命中率。本文还会将其与 Cloudflare 的另一个企业级的 CDN 加速黑科技——Railgun 进行对比。<br />
 <!--more--></p>
+<blockquote><p>使用代理商 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 接入域名到 Cloudflare，可以实现 CNAME/IP 接入，还支持 Railgun。</p></blockquote>
 <h1>Cloudflare Argo</h1>
 <h2>提升缓存命中率，Argo Tiered Cache</h2>
 <p>Cloudflare 的节点很多，但是节点太多有时不是一件好事——<strong>大多数 CDN 之间的节点是相对独立的</strong>。首先要先明白 CDN 的工作原理，CDN 通常不会预先缓存内容，而是在访客访问时充当代理的同时对可缓存的内容缓存。就拿本站来说，本站用的是<a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank">香港虚拟主机</a>，如果有英国伦敦的访客访问了我的网站，那么由于我的网站是可被缓存的，他就会连接到伦敦的节点并被缓存在这个节点。那么如果是英国曼彻斯特的访客访问了呢？由于 CDN 在曼彻斯特另有节点，访客会直接连接到曼彻斯特节点，然而曼彻斯特上并没有缓存，所以该节点会回源到香港。而显然的是，如果曼彻斯特回源到伦敦，使用伦敦的缓存会更快。</p>
@@ -49,7 +50,7 @@ tags:
 <p>Railgun 的加速效果还是非常之明显的，明显强于 Argo。</p>
 <h1>总结</h1>
 <p>Argo 并没有想象中的那么好用，而且 <b>$5/mo</b> 的起步价和 <b>$0.10/GB</b> 的流量并不便宜。当然也有可能需要一段时间 Argo 去分析线路延迟才能更好的进行优化。本文预计将在一个月后补充更新。</p>
-<p>Railgun 效果还是极其显著的，且 <a href="https://guozeyu.com/2017/11/cloudflare-cnameip/">TlOxygen <i>即将推出</i>的 Railgun</a> 对于 Cloudflare 的免费版，前 3 个域名一共 <b>$5/mo</b>，之后每个域名额外 <b>$1/mo。</b>（<a href="mailto:ze3kr@icloud.com?subject=%E7%94%B3%E8%AF%B7%20Railgun%20%E5%86%85%E6%B5%8B%E8%B5%84%E6%A0%BC&amp;body=%E6%88%91%E7%9A%84%E5%9F%9F%E5%90%8D%E6%98%AF%EF%BC%9A%E8%AF%B7%E5%A1%AB%E5%86%99%0A%0A%23%23%23%20%E4%B8%8D%E8%A6%81%E6%9B%B4%E6%94%B9%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%20%23%23%23%0A%0A%E6%88%91%E7%9F%A5%E9%81%93%E5%8F%91%E9%80%81%E6%AD%A4%E9%82%AE%E4%BB%B6%E5%90%8E%EF%BC%8C%E7%BD%91%E7%AB%99%E9%9A%8F%E6%97%B6%E5%B0%B1%E5%8F%AF%E8%83%BD%E8%A2%AB%E5%90%AF%E7%94%A8%20Railgun%EF%BC%8C%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%85%8D%E7%BD%AE%E5%B0%86%E4%BC%9A%E5%BD%B1%E5%93%8D%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E3%80%82%0A%0A%E6%88%91%E7%9A%84%E5%9F%9F%E5%90%8D%E5%B7%B2%E7%BB%8F%E5%9C%A8%20TlOxygen%20%E6%8E%A5%E5%85%A5%E3%80%82%E6%88%91%E4%BA%86%E8%A7%A3%E5%88%B0%E5%86%85%E6%B5%8B%E5%8F%AF%E8%83%BD%E6%9C%89%E4%B8%8D%E7%A8%B3%E5%AE%9A%E6%80%A7%EF%BC%8C%E4%B8%94%E6%9C%AA%E5%BF%85%E6%9C%89%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81%E3%80%82%E6%88%91%E6%B2%A1%E6%9C%89%E5%BC%80%E5%90%AF%E9%92%88%E5%AF%B9%20Cloudflare%20%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E3%80%82%E6%88%91%E4%B9%9F%E7%9F%A5%E9%81%93%E5%86%85%E6%B5%8B%E7%9A%84%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8%E8%B5%84%E6%A0%BC%E9%9A%8F%E6%97%B6%E5%8F%AF%E8%83%BD%E7%BB%93%E6%9D%9F%EF%BC%8C%E9%9C%80%E8%A6%81%E4%BA%A4%E8%B4%B9%E6%89%8D%E8%83%BD%E7%BB%A7%E7%BB%AD%E4%BD%BF%E7%94%A8%20Railgun%20%E5%8A%9F%E8%83%BD%E3%80%82%0A%0A%E6%AD%A4%E5%A4%96%EF%BC%8C%E6%88%91%E4%B9%9F%E5%B7%B2%E7%BB%8F%E9%98%85%E8%AF%BB%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%20https%3A%2F%2Fwiki.tloxygen.com%2FCloudFlare_%25E6%258E%25A5%25E5%2585%25A5%2FRailgun">申请 Railgun 免费内测资格</a>。正式上线后将支持 NS 接入）</p>
+<p>Railgun 效果还是极其显著的，且 <a href="https://guozeyu.com/2017/11/cloudflare-cnameip/">TlOxygen <i>即将推出</i>的 Railgun</a> 对于 Cloudflare 的免费版，前 3 个域名一共 <b>$5/mo</b>，之后每个域名额外 <b>$1/mo。</b></p>
 <h2>动态内容</h2>
 <p><b>延迟</b>：Google Cloud CDN 延迟最低，Cloudflare Railgun 仅次。</p>
 <p><b>流量</b>：对于普通的动态 CMS，Cloudflare Railgun 大约能节省 10 倍以上流量，Google Cloud CDN 是做不到的。</p>
