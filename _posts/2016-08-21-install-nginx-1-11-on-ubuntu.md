@@ -26,7 +26,7 @@ tags:
 <p>关于双证书，<strong>仅建议使用独立 IP 的人去使用</strong>，如果没有独立 IP，那么就需要启用 SNI 功能——然而几乎所有支持 SNI 功能的浏览器也都支持了 ECC 证书，所以可以跳过升级步骤，直接换 Let's Encrypt 的 ECC 证书，不使用 RSA 证书。</p>
 <p>我有不止一个服务器，如果都使用自己编译的 Nginx，那么太麻烦了，于是我决定使用添加软件源的方法，通过 <code>apt</code> 升级，方法如下：</p>
 <p>首先需要先添加 Nginx mainline 的软件源：</p>
-<pre class="lang:sh decode:true ">$ sudo add-apt-repository ppa:nginx/stable
+<pre class="lang:sh decode:true ">$ sudo add-apt-repository ppa:nginx/stable # sudo apt install software-properties-common
 $ sudo apt update</pre>
 <p>然后移除现有 Nginx 并安装新版本：</p>
 <pre class="lang:sh decode:true">$ sudo apt remove nginx nginx-common nginx-core
