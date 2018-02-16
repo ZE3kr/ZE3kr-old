@@ -25,8 +25,8 @@ tags:
 <p>北京拆违视频，几十天的间隔拍摄合成而成。本视频是 60 帧视频，使用 4K 相机录制。</p>
 <p><!--more--></p>
 <ul>
-<li><a href="https://cdn.landcement.com/uploads/2017/12/1080p-hevc.mp4" target="_blank">在线观看/下载 <strong>1080p</strong> 版本</a>（仅支持新设备）</li>
-<li><a href="https://cdn.landcement.com/uploads/2017/12/4k-hevc.mp4" target="_blank">在线观看/下载 <strong>4K</strong> 版本</a>（仅支持新设备）</li>
+<li><a href="https://cdn.landcement.com/uploads/2017/12/1080p-hevc.mp4" target="_blank">在线观看/下载 <strong>1080p</strong> 版本</a>（H.265 仅支持新设备）</li>
+<li><a href="https://cdn.landcement.com/uploads/2017/12/4k-hevc.mp4" target="_blank">在线观看/下载 <strong>4K</strong> 版本</a>（H.265 仅支持新设备）</li>
 <li><a href="https://www.youtube.com/watch?v=NdCRw08wZ0E" target="_blank">在 <strong>YouTube</strong> 上观看 4K 版本</a>。</li>
 </ul>
 <p>在 iTunes 上获取音乐：</p>
