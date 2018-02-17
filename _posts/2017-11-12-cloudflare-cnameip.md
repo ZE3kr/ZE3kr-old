@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: Cloudflare 免费 CNAME/IP 接入，为你的海外访客加速！
+title: Cloudflare 免费 CNAME/IP 接入，添加 IPv6 支持并为你的海外访客加速！
 author:
   display_name: ZE3kr
   login: ZE3kr
