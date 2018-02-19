@@ -19,13 +19,16 @@ categories:
 - 未归类
 tags: []
 ---
-<blockquote>原标题：推出 Cloudflare CNAME/IP 接入模式以及 Railgun 免费内测！</p></blockquote>
-<p>立即前往面板，地址 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 。通过使用该服务，你可以免费获得海外 CDN（通过分区解析可以单独为海外访客启用）。支持 HTTPS 和 IPv6（再也不用担心 App Store 审核被拒）。海外 CDN 服务不仅支持 CNAME 接入，还提供 Anycast IP 接入，意味着根域名也可以正常使用，不影响邮件接收（即不与 MX 记录冲突）。</p>
+<blockquote>原标题：推出 Cloudflare CNAME/IP 接入模式以及 Railgun 免费内测！</p>
+</blockquote>
+<p>立即前往面板，地址 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a> 。通过使用该服务，你可以免费获得海外 CDN（通过分区解析可以单独为海外访客启用）。支持 HTTPS 和 IPv6（再也不用担心 App Store 审核被拒）。海外 CDN 服务不仅支持 CNAME 接入，还提供 Anycast IP 接入，意味着根域名也可以正常使用，不影响邮件接收（即不与 MX 记录冲突）。</p>
+<p><!--more--></p>
+<p>本站目前就使用了 CNAME/IP 接入，海外访问走 Cloudflare 加速！</p>
 <h2><a href="https://wiki.tloxygen.com/CloudFlare_接入/教程" target="_blank">使用教程</a></h2>
 <p>上方链接的教程以使用 CloudXNS 作为 DNS 的域名为例。</p>
 <h2>介绍</h2>
-<p>Cloudflare 是国外 CDN 厂商。默认免费版只能进行 NS 记录，这意味着还需要更改域名的 NS，实在是麻烦。然而 CNAME 接入方式只支持 <strong>200 美元/月</strong>以上的 <strong>Business 或 Enterprise plan</strong>，这对于很多人来说都太贵了。而作为 Cloudflare 的 Partner，却一直可以免费的创建 CNAME 接入的域名。我最近利用我的 Cloudflare Partner 账户做了个图形化 CNAME/IP 接入网站。地址 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 。<!--more--></p>
-<h2><span style="font-size: 1.25rem;">特性</span></h2>
+<p>Cloudflare 是国外 CDN 厂商。默认免费版只能进行 NS 记录，这意味着还需要更改域名的 NS，实在是麻烦。然而 CNAME 接入方式只支持 <strong>200 美元/月</strong>以上的 <strong>Business 或 Enterprise plan</strong>，这对于很多人来说都太贵了。而作为 Cloudflare 的 Partner，却一直可以免费的创建 CNAME 接入的域名。我最近利用我的 Cloudflare Partner 账户做了个图形化 CNAME/IP 接入网站。地址 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a> 。</p>
+<h2><span style="font-size: 1.25rem">特性</span></h2>
 <ul>
 <li>创建 CNAME/IP 方式接入的域名</li>
 <li>支持已经 NS 接入域名一键更改为 CNAME 接入</li>
@@ -34,7 +37,7 @@ tags: []
 <li>SSL 记录验证与配置</li>
 <li>提供 IP 地址接入，每个子域名提供 CNAME 记录接入</li>
 <li>也可以使用 NS 方式接入，并可以设置 DNSSEC</li>
-<li><a href="https://guozeyu.com/2017/05/cloudflare-argo/#Cloudflare_Railgun">支持 Railgun</a>，与原站建立长链接，为动态页面提升约 7 倍速度！</li>
+<li><a href="https://guozeyu.com/2017/05/cloudflare-argo/#Cloudflare_Railgun">支持</a><a href="https://guozeyu.com/2017/05/cloudflare-argo/#Cloudflare_Railgun"> Railgun</a>，与原站建立长链接，为动态页面提升约 7 倍速度！</li>
 </ul>
 <p>立即前往 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a></p>
 <h2>注意事项</h2>
@@ -45,5 +48,5 @@ tags: []
 </ul>
 <h2><a href="https://wiki.tloxygen.com/CloudFlare_接入/教程" target="_blank">使用教程</a></h2>
 <h2>界面截图</h2>
-<p><img class="aligncenter size-large wp-image-3261" src="https://cdn.landcement.com/sites/2/2017/11/Screenshot-2017-11-12-07.39.14-1089x1600.png" alt="" width="525" height="771" /></p>
-<p>另外，<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">TlOxygen 主机</a>正在六折促销，欢迎<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">抢购</a>，优惠将在购物车中自动生效。</p>
+<p><img src="https://cdn.landcement.com/sites/2/2017/11/Screenshot-2017-11-12-07.39.14-1089x1600.png" class="size-large wp-image-3261" width="525" height="771" alt=""></p>
+<p>另外，<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">TlOxygen </a><a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">主机</a>正在六折促销，欢迎<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">抢购</a>，优惠将在购物车中自动生效。</p>

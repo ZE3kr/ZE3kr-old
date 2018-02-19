@@ -28,7 +28,9 @@ tags:
 <blockquote>注意⚠️：此页面已经过时，请<a href="https://wiki.tloxygen.com/CDN_%E6%8F%90%E4%BE%9B%E5%95%86" target="_blank">查看最新的对应页面</a></p>
 </blockquote>
 <p>--></p>
-<p><!--more-->全站 CDN 能在哪些地方加速？</p>
+<p><!--more--></p>
+<blockquote><p>使用代理商 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a> 接入域名到 Cloudflare CDN，可以实现 CNAME/IP 接入，还支持 Railgun。</p></blockquote>
+<h2>全站 CDN 能在哪些地方加速？</h2>
 <h3>我已经像你之前一样只缓存了图片、视频、CSS 和 JS 之类的静态资源，全站 CDN 有什么优点？</h3>
 <p>就算不缓存任何内容，全站 CDN 也是有他的优点的：</p>
 <ol>
@@ -37,6 +39,7 @@ tags:
 <li><strong>减少延迟</strong>：建立 HTTP 连接之前需要先进行 TCP 和 HTTP 的 SSL 握手，这样会增加首次加载所需时间。而很多 CDN 都会与服务器进行预连接，而且 CDN 的服务器离用户较近，所以能减少首次加载所需时间，即使没有缓存页面。</li>
 <li><strong>缓存动态页面</strong>：所谓动态页面，其实大多数对于没有登录的用户来说内容其实是固定的（如 WordPress 的文章页），所以可以针对未登录的用户缓存。这需要 CDN 能自动根据 Cookie 判断用户有没有登录，这下就只剩 Cloudflare 企业版和 CloudFront 可以做到了。</li>
 </ol>
+<blockquote><p>使用代理商 <a href="https://cf.tlo.xyz">cf.tlo.xyz</a> 接入域名到 Cloudflare CDN，可以实现 CNAME/IP 接入，还支持 Railgun。</p></blockquote>
 <h2>使用 CloudFront 作为全站 CDN</h2>
 <p>CloudFront 有 Amazon 自建的网络，单价较高但是 0 元起步，适合中小客户。本文将重点介绍 CloudFront 和 WordPress 配合实现动静分离，缓存 HTML 页面。之后将对比其他的一些 CDN。</p>
 <ul>
@@ -132,6 +135,7 @@ tags:
 </ol>
 <h3>Cloudflare 免费版/专业版</h3>
 <p>有自建的网络，最快的速度、最低廉的价格，主要提供网站安全防护，当然还附带了 CDN。其提供的 NS 服务也是（国外）业界第一的速度。本站国外使用了 Cloudflare，欢迎直接测试本站国外的速度。</p>
+<blockquote><p>使用代理商 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a> 接入域名到 Cloudflare CDN，可以实现 CNAME/IP 接入，还支持 Railgun。</p></blockquote>
 <ul>
 <li>国外速度：★★★★★，由于拥有众多的海外节点并支持 Anycast，给满分。速度指标指全球各地的 Ping 值，下同</li>
 <li>国内速度：★★☆☆☆，国内走美国西岸的节点，速度欠佳</li>
