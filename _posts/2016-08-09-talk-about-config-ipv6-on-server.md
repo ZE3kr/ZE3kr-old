@@ -73,7 +73,7 @@ tags:
 </ul>
 <h3>邮件服务</h3>
 <ul>
-<li>Gmail / <a href="https://domain.tlo.xyz/google_apps.php">G Suit (Gmail for Work)</a></li>
+<li>Gmail / G Suit (Gmail for Work)</li>
 </ul>
 <hr />
 <p>当你配置好后，你可以<a href="http://ipv6-test.com/validate.php">在</a><a href="http://ipv6-test.com/validate.php"> IPv6 Test </a><a href="http://ipv6-test.com/validate.php">上测试你的网站</a>。</p>
