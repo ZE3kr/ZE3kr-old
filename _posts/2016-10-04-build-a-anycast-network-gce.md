@@ -22,7 +22,7 @@ tags:
 - VPS
 - Google Cloud Platform
 ---
-<p>2017 年 4 月更新：由于 GCE 在国内经常不稳定，本站主机已经换到了 <a href="https://domain.tloxygen.com/web-hosting/index.php" rel="noopener" target="_blank">TlOxygen 的虚拟主机</a>上了。</p>
+<p>2018 年 2 月更新：由于已经有<a href="https://cf.tlo.xyz" target="_blank">免费的 CloudFlare CNAME/IP 接入</a>，同样也是 Anycast，本站已经不再使用 Google Cloud CDN。</p>
 <p><a href="https://guozeyu.com/2016/10/asia-google-compute-engine/">在上一篇文章</a>中，我简单的介绍了 Google Compute Engine（简称 GCE）的基础使用。这篇文章我将介绍如何利用 GCE 建立一个 Anycast 网络，并测试了其速度。</p>
 <p>想要实现这个功能，就需要使用 <a href="https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example" target="_blank">Cross-Region Load Balancing</a>（跨地区的负载均衡），此功能就相当于一个 HTTP(S) 的反向代理，所以只能针对 HTTP/HTTPS 请求进行负载均衡。</p>
 <p><!--more--></p>
