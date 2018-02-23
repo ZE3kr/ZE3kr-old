@@ -55,6 +55,8 @@ $ sudo apt install pdns-backend-geoip
 <p>然后修改配置文件：</p>
 <pre class="lang:sh decode:true">$ rm /etc/powerdns/pdns.d/* # 删除 Example
 </pre>
+<h3>安装更新版本的 PowerDNS</h3>
+<p>很多特性，如 CAA 记录等，需要新版 PowerDNS。请<a href="https://repo.powerdns.com" target="_blank">前往官网配置软件源</a>。</p>
 <h3>安装地理位置数据库</h3>
 <p>注意，你应该已经有 MaxMind GeoIP Lite 数据库，如果没有，通过如下方式安装：</p>
 <p>创建文件 <code>/etc/GeoIP.conf</code> 内容是：</p>
