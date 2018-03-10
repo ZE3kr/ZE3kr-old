@@ -38,3 +38,4 @@ tags: []
 <p>[img id="1493" size="thumbnail"][/img]</p>
 <p><strong>SHA-256-short-v1</strong> 快速</p>
 <p>[img id="1491" size="thumbnail"][/img]</p>
+<p>本文讨论内容在《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》中有更详细的介绍。</p>

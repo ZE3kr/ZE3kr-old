@@ -30,3 +30,4 @@ tags:
 </ul>
 <p>现在页面的速度，堪称完美！</p>
 <p>你或许也想尝试这样做？现在只需要[a href="https://wordpress.org/plugins/full-site-cache-kc/"]安装我的插件并按照说明对其进行配置[/a]即可。</p>
+<p>本文讨论的内容在《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》中有更详细的介绍。</p>

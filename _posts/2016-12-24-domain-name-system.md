@@ -2,7 +2,7 @@
 layout: post
 status: publish
 published: true
-title: DNS——基础篇
+title: DNS 域名解析系统详解——基础篇
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -21,7 +21,7 @@ tags:
 - 网络
 - DNS
 ---
-<p>DNS（域名解析系统）的工作使命，就是服务于与域名相关的内容的底层。是域名（如：<code>example.com</code>）的核心组成部分。绝大多数与域名相关的东西，都离不开它。比如：</p>
+<p style="padding-left: 30px;">DNS（域名解析系统）的工作使命，就是服务于与域名相关的内容的底层。是域名（如：<code>example.com</code>）的核心组成部分。绝大多数与域名相关的东西，都离不开它。比如：</p>
 <ul>
 <li><strong>访问一个网站</strong>，通常是输入一个域名（如 <code>https://www.example.com</code>）</li>
 <li><strong>发送邮件</strong>，<code>@</code> 后面是主机名，而主机名通常是个域名（如 <code>webmaster@example.com</code>）</li>
@@ -461,4 +461,4 @@ $ dig 99.138.199.104.in-addr.arpa. ptr +short
 </ul>
 <p>如果你试图用浏览器访问这两个域名，会收到证书错误的报告，因为我还没给这个域名签发证书。</p>
 <h2>进阶</h2>
-<p>“域名解析系统详解——进阶篇” 将在以后发布，介绍关于更多种类的记录、CNAME 加速以及 DNSSEC 等。</p>
+<p>本文以及没有发布的《域名解析系（DNS）详解——DNSSEC》已经被选录至《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》</p>

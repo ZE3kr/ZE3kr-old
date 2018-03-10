@@ -42,5 +42,5 @@ tags:
 <p>此功能已经被我测试，目前的测试期间，GeoDNS 的定位功能是根据请求最终抵达的 CloudFlare 的服务器来决定的，也就是说是依靠 Anycast 系统来决定的。然而中国用户绝大多数会被运营商定向到 CloudFlare 的美国西部服务器，于是就会被 GeoDNS 系统解析道美国西部位置所对应的结果。所以此功能还是十分有限，不适合国内使用。</p>
 <h2>Rate Limiting</h2>
 <p>Cloudflare 终于可以限制 IP 的请求速率，此功能能够相当有效的过滤 CC 攻击，而且对于普通访客几乎没有影响（以前只能通过 I'm under attack 功能实现，然而这个功能会让所有用户等 5 秒才能载入）。它可以根据不同的路径配置不同的请求速率，能够实现防止暴力破解密码、防止 API 接口滥用等功能。</p>
-<p>&nbsp;</p>
+<p>本文已经被选录至《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》</p>
 <p>[modified github="ZE3kr/ZE3kr"]更新功能的名称，添加图形界面的截图[/modified]</p>

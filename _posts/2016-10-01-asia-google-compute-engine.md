@@ -22,13 +22,14 @@ tags:
 - VPS
 - Google Cloud Platform
 ---
-<p>2017 年 4 月更新：由于 GCE 在国内经常不稳定，本站主机已经换到了 <a href="https://domain.tloxygen.com/web-hosting/index.php" rel="noopener" target="_blank">TlOxygen 的虚拟主机</a>上了。</p>
+<p>2017 年 4 月更新：由于 GCE 在国内经常不稳定，本站主机已经换到了 <a href="https://domain.tloxygen.com/web-hosting/index.php" target="_blank" rel="noopener">TlOxygen 的虚拟主机</a>上了。</p>
 <p>最近想要寻找按流量计费、连接中国速度比较快的 VPS，最终选择了 Google Compute Engine（下文简称 GCE）的亚洲区。GCE 的后台配置页面虽不能在中国访问，但是其 GCE 实例是可以在中国访问的。</p>
 <p>创建一个新的 GCE 的流程十分简单，只需要自定义配置、选择操作系统、配置 SSH Key，然后选择创建就好了，整个流程十分像 VPS，但是可自定义的功能却远比 VPS 多。</p>
 <p><!--more--></p>
 <h2>价格与配置</h2>
-<p><a href="https://cloud.google.com/compute/pricing">具体价格请参见官方价格表</a></p>
-<p>GCE 的价格比较亲民，最低配 1 共享核-0.6 GB 内存-10GB HDD 每月只需要不到 5 美元，而且由于 CPU、内存大小和磁盘大小都是可调的，所以可以根据自己的需要去购买最适合的，能省去不必要的开销。</p>
+<p><a href="https://cloud.google.com/compute/pricing">具体价格请参见官方价格表</a>。（由于有持续使用折扣，每月实际价格比按照每小时更低）</p>
+<p>GCE 的价格比较亲民，最低配 (f1-micro) 1 共享核-0.6 GB 内存-10GB HDD 每月只需要不到 5 美元，而且由于 CPU、内存大小和磁盘大小都是可调的，所以可以根据自己的需要去购买最适合的，能省去不必要的开销。</p>
+<p>而且对于北美的部分机房而言，账户首个最低配 (f1-micro) 实例可以享受到<a href="https://cloud.google.com/free/?hl=zh-cn" target="_blank">永久免费配额</a>，对于建站而言 (再配合 Cloudflare 使用) 还是很划算的。（另外大家可以直接<a href="https://cf.tlo.xyz">使用 CNAME 接入 Cloudflare</a>，这样就不用换 DNS 服务器了。）</p>
 <p>流量的话对于所有的可用区，<strong>连中国大陆 $0.23/Gbyte</strong>、美欧地区 $0.12/Gbyte，流量的价格有些小贵，但是如果是连接 Google 自己的服务的话（包括但不限于 Gmail、YouTube），流量不计费（但是流量是双向的，所以是本地通过 GCE 上传完全免费，下载还是原价）。</p>
 <p>GCE 还有一点比较特殊的是它是按分钟计费的，当服务处于终止状态（相当于关机，磁盘数据保留）时，不收取费用（除了少量的磁盘使用费用）。每次计算 Uptime 时，如果不到 10 分钟则一律按十分钟算，超过 10 分钟后才是真正的按分钟计费，不过还是很划算了。</p>
 <h3>关于共享核的实例的补充</h3>
@@ -104,4 +105,4 @@ traceroute to google.com (64.233.189.113), 64 hops max
 <h3>不支持多 IP 与 IPv6</h3>
 <p>GCE 上不能通过加钱的方式去购买多个 IPv4 地址，所以一个实例只能有一个 IPv4 地址，需要多个 IPv4 需求的可以尝试多个实例（或者可以通过 Load Balancing 来实现多个 IP 地址）。</p>
 <p><del>同时，GCE 目前不支持 IPv6，这实在是很可惜的。</del>目前已经可以<a href="https://guozeyu.com/2016/10/build-a-anycast-network-gce/">通过负载均衡器来实现 IPv6</a>。</p>
-<p>[modified github="ZE3kr/ZE3kr"]完善文章[/modified]</p>
+<p>[modified github="ZE3kr/ZE3kr"]增加免费使用配额介绍[/modified]</p>

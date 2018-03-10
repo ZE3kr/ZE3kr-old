@@ -79,3 +79,4 @@ tags:
 <p>当你配置好后，你可以<a href="http://ipv6-test.com/validate.php">在</a><a href="http://ipv6-test.com/validate.php"> IPv6 Test </a><a href="http://ipv6-test.com/validate.php">上测试你的网站</a>。</p>
 <p>[img id="1816" size="medium"]测试截图[/img]</p>
 <p>直至现在，支持 IPv6-Only 网络访问在生产中仍然不是必须的，因为实际上很少存在 IPv6-Only 的网络，一般都兼容 IPv4，很多大网站也完全不支持 IPv6。苹果所说的要求支持 IPv6-Only，只是程序内部要使用 IPv6 通信，程序中不能有 IPv4 地址，能够在只分配了 IPv6 地址的运营商使用（然而实际上这些运营商还是支持 IPv4 的）。</p>
+<p>本文已经被选录至《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》</p>

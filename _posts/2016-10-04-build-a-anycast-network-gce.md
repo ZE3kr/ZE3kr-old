@@ -147,4 +147,5 @@ Age: 10</pre>
 <h3>BuyVM</h3>
 <p>BuyVM 是一家 VPS 提供商，却提供免费的 Anycast 功能，其 Anycast 功能是直接基于 IP 层的 Anycast，所以可以配置 HTTP 之外的各种服务。BuyVM 没有所谓的边缘服务器一说，只能有三个节点，Ping 的结果不像前两家那么快，而且 TLS 过程也是在原本的主机（这三个主机中里用户最近的一个）上进行，也会有一定延迟。</p>
 <p>BuyVM 并不提供任何亚洲的主机，所以中国的连接速度也没有比 Cloudflare 快多少，整个亚洲的速度也不是很快。</p>
+<p>本文已经被选录至《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》</p>
 <p>[modified]增加了更多截图以及实际使用[/modified]</p>

@@ -101,3 +101,4 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] # 禁用 HTTP 协议<
 <ul>
 <li>一旦设置了强制 HTTPS 协议或者启用了 HSTS 后很难再退回 HTTP 协议（尤其是后者），如果突然关闭了 HTTPS 协议，用户可能在很长一段时间内无法访问网站，或者证书报错，大量流失用户。所以决定强制 HTTPS 前请仔细做好考虑。</li>
 </ul>
+<p>本文已经被选录至《<a href="https://j.youzan.com/fzAiLY" target="_blank">敲开网络世界的大门</a>》</p>
