@@ -29,11 +29,13 @@ tags: []
 <p>Cloudflare 是国外 CDN 厂商。默认免费版只能进行 NS 记录，这意味着还需要更改域名的 NS，实在是麻烦。然而 CNAME 接入方式只支持 <strong>200 美元/月</strong>以上的 <strong>Business 或 Enterprise plan</strong>，这对于很多人来说都太贵了。而作为 Cloudflare 的 Partner，却一直可以免费的创建 CNAME 接入的域名。我最近利用我的 Cloudflare Partner 账户做了个图形化 CNAME/IP 接入网站。地址 <a href="https://cf.tlo.xyz" target="_blank">cf.tlo.xyz</a> 。</p>
 <h2><span style="font-size: 1.25rem;">特性</span></h2>
 <ul>
+<li>支持所有 Cloudflare 原本就有的功能</li>
 <li>创建 CNAME/IP 方式接入的域名</li>
+<li>查看最近一年的统计记录</li>
 <li>支持已经 NS 接入域名一键更改为 CNAME 接入</li>
 <li>使用 BIND 格式轻松添加 A/AAAA/CNAME/TXT/MX 等 DNS 记录</li>
 <li>开启/关闭某个子域名的 CDN 功能</li>
-<li>SSL 记录验证与配置 (同时支持 DNS 验证和文件验证）</li>
+<li>SSL 记录验证与配置 (自动签发证书，同时也支持文件验证）</li>
 <li>提供 IP 地址接入，每个子域名提供 CNAME 记录接入</li>
 <li>也可以使用 NS 方式接入，并可以设置 DNSSEC</li>
 <li><a href="https://guozeyu.com/2017/05/cloudflare-argo/#Cloudflare_Railgun">支持</a><a href="https://guozeyu.com/2017/05/cloudflare-argo/#Cloudflare_Railgun"> Railgun</a>，与原站建立长链接，为动态页面提升约 7 倍速度！</li>
@@ -46,6 +48,7 @@ tags: []
 <li>添加 CNAME/IP 接入的域名可能需要验证你的域名所有权，你需要在子域名上添加一个 TXT 记录。</li>
 </ul>
 <h2><a href="https://wiki.tloxygen.com/CloudFlare_接入/教程" target="_blank">使用教程</a></h2>
+<h2><a href="https://cf.tlo.xyz/analytics.php" target="_blank">统计界面截图</a></h2>
 <h2>界面截图</h2>
-<p><img class="size-large wp-image-3261" src="https://cdn.landcement.com/sites/2/2017/11/Screenshot-2017-11-12-07.39.14-1089x1600.png" alt="" width="525" height="771" /></p>
+<p><img class="aligncenter size-large wp-image-3468" src="https://cdn.landcement.com/sites/2/2017/11/Cloudflare_Partner_管理页面-1-586x1600.png" alt="" width="525" height="1433" /></p>
 <p>另外，<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">TlOxygen </a><a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">主机</a>正在六折促销，欢迎<a href="https://domain.tloxygen.com/web-hosting/index.php?promo=1711" target="_blank">抢购</a>，优惠将在购物车中自动生效。</p>

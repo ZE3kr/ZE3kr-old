@@ -22,10 +22,11 @@ tags: []
 <p>PM10: <span id="pm10">…</span> μg/m³</p>
 <p>北京时间: <span id="air_time">…</span></p>
 <p>检测浓度范围: 1-999μg/m³；精度 ±10%。</p>
-<p><a href="https://app.air-matters.com/detail/monitor/8ee9ffff3f5bea56" rel="noopener" target="_blank">将此监测站添加到在意空气</a></p>
+<p><iframe src="https://app.initialstate.com/embed/#/tiles/LAOJda5JahvtYfZkJDSzjvrD5TQosfnI%3AMOD" style="width:100%;height:300px" seamless="seamless" frameborder="0" scrolling="no"></iframe></p>
+<p><a href="https://app.air-matters.com/detail/monitor/8ee9ffff3f5bea56" target="_blank" rel="noopener">将此监测站添加到在意空气</a></p>
 <ol>
 <li>PM2.5 浓度指标请参考<a href="https://air-matters.com/readings/zh-Hans/pm25.html?standard=aqi_us" target="_blank">美国标准</a>，<a href="https://air-matters.com/readings/zh-Hans/pm25.html?standard=aqi_cn" target="_blank">中国标准</a></li>
 <li>PM10 浓度指标请参考<a href="https://air-matters.com/readings/zh-Hans/pm10.html?standard=aqi_us" target="_blank">美国标准</a>，<a href="https://air-matters.com/readings/zh-Hans/pm10.html?standard=aqi_cn" target="_blank">中国标准</a></li>
 <li>以上数据仅为一个设备的实际测量结果。由于设备放置位置与环保局放置位置的差异以及设备本身性能的限制，本站提供的数据与环保局可能有所出入，本人不对数据偏差负责。</li>
 </ol>
-<p><script src="https://landcement.com/air.php"></script></p>
+<p><script src="https://landcement.com/air.php" async></script></p>
