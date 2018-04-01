@@ -90,9 +90,7 @@ tags:
 <li>IPv6：<strong>支持</strong></li>
 <li>记录类型：<strong>几乎完全齐全</strong>，支持 A、AAAA、CNAME、NS、MX、TXT、SRV、SPF、LOC、NAPTR、PTR、CAA 以及上方列出的 DNSSEC 相关记录。</li>
 <li>根域名 CNAME 优化：<strong>不支持</strong></li>
-<li>优先级：支持，需要购买了 Load Balancing 服务</li>
-<li>自定义 NS：<strong>不支持</strong>，购买 $200/月的 Business 版本后才能支持</li>
-<li>价格：<strong>免费</strong></li>
+<li>自定义 NS：<strong>支持</strong></li>
 <li>统计功能：基本<strong>不支持</strong>，只有在每月最后结算的账单中看到</li>
 </ul>
 <h2>Rage4</h2>
@@ -109,7 +107,6 @@ tags:
 <li>根域名 CNAME 优化：<strong>支持</strong></li>
 <li>优先级：<strong>支持</strong></li>
 <li>自定义 NS：<strong>支持</strong>，同时也可以修改根域名下的 SOA 和 NS</li>
-<li>价格：每个域名 <strong>$0.5/月</strong>，<strong>$0.4/100万</strong>个请求，分区解析$0.7/100万个请求</li>
 <li>统计功能：<strong>支持</strong>，能精确到国家</li>
 </ul>
 <p>[modified github="ZE3kr/ZE3kr"][/modified]</p>
