@@ -59,6 +59,7 @@ $ sudo apt install pdns-backend-geoip
 <p>很多特性，如 CAA 记录等，需要新版 PowerDNS。请<a href="https://repo.powerdns.com" target="_blank">前往官网配置软件源</a>。</p>
 <h3>安装地理位置数据库</h3>
 <p>注意，你应该已经有 MaxMind GeoIP Lite 数据库，如果没有，通过如下方式安装：</p>
+<blockquote><p>重要更新⚠️：2018 年 4 月 1 日起已经无法通过软件自动下载到 DAT 格式的 GeoIP 数据库，请<a href="https://dev.maxmind.com/geoip/legacy/geolite/" target="_blank">前往官网手动下载对应数据库</a>。需要的是 Binary 格式的。</p></blockquote>
 <p>创建文件 <code>/etc/GeoIP.conf</code> 内容是：</p>
 <pre class="lang:ini decode:true "># The following UserId and LicenseKey are required placeholders:
 UserId 999999
