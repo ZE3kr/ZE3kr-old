@@ -2,7 +2,7 @@
 layout: page
 status: publish
 published: true
-title: PM2.5/PM10 — 北京 实时
+title: PM2.5 — 北京 实时
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -19,10 +19,12 @@ categories: []
 tags: []
 ---
 <p>PM2.5: <span id="pm2_5" style="font-size: 60px;">…</span> μg/m³</p>
-<p><span id="pm2_5_r">…</span></p>
+<p><span id="pm2_5_r">…</span><br />
+<!--</p>
 <hr />
 <p>PM10: <span id="pm10">…</span> μg/m³</p>
-<p><span id="pm10_r">…</span></p>
+<p><span id="pm10_r">…</span><br />
+--></p>
 <hr />
 <div style="display: none;">更新: <code id="air_time_u">…</code> UTC+8</div>
 <p>最近检测: <code id="air_time">…</code> UTC+8</p>
