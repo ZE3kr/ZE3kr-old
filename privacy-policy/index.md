@@ -2,7 +2,7 @@
 layout: page
 status: publish
 published: true
-title: Privacy Policy
+title: 隐私政策
 author:
   display_name: ZE3kr
   login: ZE3kr
@@ -18,36 +18,20 @@ date_gmt: '2018-05-18 13:58:27 +0800'
 categories: []
 tags: []
 ---
-<h2>Who we are</h2>
-<p>Our website address is: https://guozeyu.com.</p>
-<h2>What personal data we collect and why we collect it</h2>
+<h2>我们是谁？</h2>
+<p>我们的网址是: https://guozeyu.com.</p>
+<p>此文章面向 guozeyu.com 的访客。</p>
+<h2>我们会收集什么样的数据？为什么？</h2>
 <h3>评论</h3>
-<p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
-<p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
-<h3>媒体</h3>
-<p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
-<h3>Contact forms</h3>
+<p>当访客浏览时，我们不仅会存储你在表单中填写的内容，还会记录下你的 IP 地址、浏览器信息。</p>
+<p>由你的邮箱生成的一段字符也会被传送到 Gravatar，具体可以参考 Gravatar 的隐私政策: https://automattic.com/privacy/ 。在你的评论被批准后，你的 Gravatar 头像会被公开显示。</p>
 <h3>Cookies</h3>
-<p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
-<p>If you have an account and you log in to this site, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
-<p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select "Remember Me", your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
-<p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
-<h3>Embedded content from other websites</h3>
-<p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
-<p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracing your interaction with the embedded content if you have an account and are logged in to that website.</p>
-<h3>Analytics</h3>
-<h2>Who we share your data with</h2>
-<h2>How long we retain your data</h2>
-<p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
-<p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
-<h2>What rights you have over your data</h2>
-<p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
-<h2>Where we send your data</h2>
-<p>Visitor comments may be checked through an automated spam detection service.</p>
-<h2>Your contact information</h2>
-<h2>Additional information</h2>
-<h3>How we protect your data</h3>
-<h3>What data breach procedures we have in place</h3>
-<h3>What third parties we receive data from</h3>
-<h3>What automated decision making and/or profiling we do with user data</h3>
-<h3>Industry regulatory disclosure requirements</h3>
+<p>为了便于你下次使用，你在提交评论时使用的邮箱、姓名、网站地址将通过 Cookie 存储在你的浏览器中。这些 Cookie 的有效期为一年。</p>
+<h3>统计</h3>
+<p>我们使用自建的 Matomo 进行统计，具体可以参考 Matomo 的隐私政策 https://matomo.org/privacy-policy/ 。</p>
+<h2>我们与谁共享了数据</h2>
+<ul>
+<li><strong>Akismet</strong>：你的评论内容会被发送到 Akismet 以进行垃圾检查</li>
+</ul>
+<h2>我们会保留你的数据多久</h2>
+<p>如果你留下评论，你的评论内容及其元数据会被永久保存。</p>

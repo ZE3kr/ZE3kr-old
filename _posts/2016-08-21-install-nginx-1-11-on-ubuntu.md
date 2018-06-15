@@ -21,7 +21,8 @@ tags:
 - 网络
 - 安全
 ---
-<p>Ubuntu 16.04.01 自带的软件源中的是 Nginx 1.10.0，但是这个版本的 Nginx 的 HTTP/2 模块中存在 Bug，<a href="https://imququ.com/post/nginx-http2-post-bug.html" target="_blank">具体见此</a>。现在 Nginx 1.12 Stable 已经推出，直接安装 Stable 版本即可。<br />
+<p>Ubuntu 16.04.01 自带的软件源中的是 Nginx 1.10.0，但是这个版本的 Nginx 的 HTTP/2 模块中存在 Bug，<a href="https://imququ.com/post/nginx-http2-post-bug.html" target="_blank">具体见此</a>。现在 Nginx 1.12 Stable 已经推出，直接安装 Stable 版本即可。</p>
+<p>2018-06 更新：如果你使用 Ubuntu 18.04 或者是以后的版本，那么系统默认的软件源的 Nginx 版本（1.14）就足够了。<br />
 <!--more--></p>
 <p>关于双证书，<strong>仅建议使用独立 IP 的人去使用</strong>，如果没有独立 IP，那么就需要启用 SNI 功能——然而几乎所有支持 SNI 功能的浏览器也都支持了 ECC 证书，所以可以跳过升级步骤，直接换 Let's Encrypt 的 ECC 证书，不使用 RSA 证书。</p>
 <p>我有不止一个服务器，如果都使用自己编译的 Nginx，那么太麻烦了，于是我决定使用添加软件源的方法，通过 <code>apt</code> 升级，方法如下：</p>
